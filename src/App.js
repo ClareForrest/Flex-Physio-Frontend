@@ -4,20 +4,28 @@ import { HomePage } from './components/homepage';
 import { Authorisation} from './components/authorisation';
 import { HomePageLoggedIn } from './components/homepageloggedin';
 import { Profile } from './components/profile';
+import React, {useState} from 'react';
+import { 
+  BrowserRouter,
+  Switch, 
+  Route, 
+  Link 
+} from 'react-router-dom';
 
 
 function App() {
 
-  //Need to set up a switch:case statement here to switch between views
-
+  //Need to set up a switch using BrowserRouter and Switch to change between views/components
   return (
     <>
-      <Template>
-        {/* <HomePage></HomePage> */}
-        {/* <Authorisation></Authorisation> */}
-        {/* <HomePageLoggedIn></HomePageLoggedIn> */}
-        <Profile></Profile>
-      </Template>
+      <BrowserRouter>
+        <Template>
+          {/* <HomePage></HomePage> */}
+          {/* <Authorisation></Authorisation> */}
+          {/* <HomePageLoggedIn></HomePageLoggedIn> */}
+          {/* <Profile></Profile> */}
+        </Template>
+      </BrowserRouter>
     </>
   );
 }
