@@ -20,13 +20,6 @@ export const Page = styled.div`
   color: black;
 `
 
-export const Nav = styled.nav`
-  width: 100%;
-  height: 45px;
-  background-color: black;
-  color: white;
-`
-
 export const SidePanel = styled.div`
   height: 100vh;
   width: 100%;
