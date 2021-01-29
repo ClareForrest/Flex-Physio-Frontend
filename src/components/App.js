@@ -18,7 +18,6 @@ import { LoggedOutNav } from "./LoggedOutNav";
 
 function App() {
 
-  //Need to set up a switch using BrowserRouter and Switch to change between views/components
   return (
   <>
     <Template>
