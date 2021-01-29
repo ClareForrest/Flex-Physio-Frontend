@@ -22,6 +22,7 @@ export function Login({ history }) {
       if (response.status >= 400) {
         throw new Error("incorrect credentials");
       } else {
+        console.log(response)
         const { jwt } = await response.json();
         localStorage.setItem("token", jwt);
         history.push("/..");
