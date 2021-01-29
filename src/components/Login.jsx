@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { LoggedOutNav } from './LoggedOutNav'
 
 export function Login({ history }) {
   const [email, setEmail] = useState("");
@@ -33,8 +32,16 @@ export function Login({ history }) {
 
   return (
     <>
-      <LoggedOutNav />
-      <h1>Login</h1>
+      <div class="row justify-content-center">
+      <HeadingSub>
+        Not a Member? 
+        <Link to="/sign-up">Sign Up </Link>
+      </HeadingSub>
+      </div>
+      <div class="row justify-content-center">
+        <Login></Login>
+      </div>
+      <button type="button" class="btn btn-secondary">Login</button>
       {errMessage && <span>{errMessage}</span>}
       <form onSubmit={onFormSubmit}>
         <label htmlFor="email">Email</label>
