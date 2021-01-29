@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { SidePanel } from '../styled/main';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import logo from '../logo.png';
-import { NavRouter } from './router';
+import { NavRouter } from './NavRouter';
 
 
 export function Template(props) {
@@ -23,7 +23,6 @@ export function Template(props) {
           </SidePanel>
         </Col>
         <Col>
-          <NavRouter/>
           {props.children}
         </Col>
       </Row>

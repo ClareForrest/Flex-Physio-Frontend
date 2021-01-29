@@ -30,7 +30,7 @@ function MyVerticallyCenteredModal(props) {
 }
 
 export function Profile() {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
 
   return (
     <>

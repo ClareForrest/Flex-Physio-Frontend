@@ -40,7 +40,6 @@ export function SignUp({ history }) {
 
   return (
     <>
-      <LoggedOutNav />
       <h1>Sign Up</h1>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="firstName">first name</label>
