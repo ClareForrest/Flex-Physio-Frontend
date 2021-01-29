@@ -19,14 +19,15 @@ import { LoggedOutNav } from "./LoggedOutNav";
 function App() {
 
   return (
-  <>
-    <Template>
-    <Switch>
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/sign-up" component={SignUp} />
-    </Switch>
-    </Template>
-  </>
+    <>
+      <Template>
+        {/* <HomePage></HomePage> */}
+        {/* <Authorisation></Authorisation> */}
+        {/* <HomePageLoggedIn></HomePageLoggedIn> */}
+        {/* <Profile></Profile> */}
+        {/* <Bookings></Bookings>*/}
+      </Template>
+    </>
   );
 }
 

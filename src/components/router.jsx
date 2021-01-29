@@ -55,6 +55,8 @@ export function NavRouter() {
         </Route>
         <Route exact path="/homepageloggedin"> {/*I want to have this link on the icon. That way you can still get to home/services/about us etc through home, but can also see your logged in home page*/}
           <HomePageLoggedIn />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/sign-up" component={SignUp} />
         </Route>
       </Switch>
   </BrowserRouter>
