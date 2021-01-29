@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from 'react';
+import { HeadingSub } from '../styled/main';
 
 export function Login({ history }) {
   const [email, setEmail] = useState("");
