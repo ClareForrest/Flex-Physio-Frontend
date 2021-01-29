@@ -1,6 +1,5 @@
 import '../styled/style.css';
 import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
 import React, { useState, Component } from 'react';
 import { 
   BrowserRouter,
@@ -13,7 +12,7 @@ import { Authorisation } from './authorisation';
 import { HomePageLoggedIn } from './homepageloggedin';
 import { Profile } from './profile';
 import { Bookings } from './bookings';
-import ScrollIntoView from 'react-scroll-into-view'
+
 
 export function NavRouter() {
   /*use useEffect that checks if the user is logged in*/
