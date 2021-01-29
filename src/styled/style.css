@@ -9,3 +9,12 @@ a {
   background-color: black;
 }
 
+.dropdown-links {
+  text-decoration: none;
+  color: black; 
+}
+
+.set-size {
+  height: 210px;
+  width: 100%;
+}

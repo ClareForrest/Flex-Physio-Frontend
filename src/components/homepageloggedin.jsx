@@ -1,5 +1,6 @@
 import { Row, Col } from 'react-bootstrap';
 import { HeadingMain } from '../styled/main';
+import Button from 'react-bootstrap/Button';
 
 export function HomePageLoggedIn() {
   return(
@@ -9,18 +10,26 @@ export function HomePageLoggedIn() {
         </Row>
         <Row> 
           <Col>
-            <button type="button" class="btn btn-secondary btn-lg btn-block">Make a Booking</button>
+          <div class="set-size">
+            <Button variant="secondary" size="lg">Make a Booking</Button>
+          </div>
           </Col>
           <Col>
-            <button type="button" class="btn btn-secondary btn-lg btn-block">View Current Booking</button>
+          <div class="set-size">
+            <Button variant="secondary" size="lg">View Current Booking</Button>
+          </div>
           </Col>
         </Row>
         <Row> 
           <Col>
-            <button type="button" class="btn btn-secondary btn-lg btn-block">View Previous Bookings</button>
+          <div class="set-size">
+            <Button variant="secondary" size="lg">View Previous Bookings</Button>
+          </div>
           </Col>
           <Col>
-            <button type="button" class="btn btn-secondary btn-lg btn-block">View/Edit Profile</button>
+          <div class="set-size">
+            <Button variant="secondary" size="lg">View/Edit Profile</Button>
+          </div>
           </Col>
         </Row>
         <Row>

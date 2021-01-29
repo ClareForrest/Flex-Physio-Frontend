@@ -21,7 +21,7 @@ export const Page = styled.div`
 `
 
 export const SidePanel = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-color: rgb(191, 243, 191);
 `
