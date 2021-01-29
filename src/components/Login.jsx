@@ -34,15 +34,6 @@ export function Login({ history }) {
 
   return (
     <>
-      <div class="row justify-content-center">
-      <HeadingSub>
-        Not a Member? 
-        <Link to="/sign-up">Sign Up </Link>
-      </HeadingSub>
-      </div>
-      <div class="row justify-content-center">
-        <Login></Login>
-      </div>
       <button type="button" class="btn btn-secondary">Login</button>
       {errMessage && <span>{errMessage}</span>}
       <form onSubmit={onFormSubmit}>
