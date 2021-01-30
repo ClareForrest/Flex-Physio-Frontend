@@ -13,6 +13,7 @@ import { Profile } from './Profile';
 import { Bookings } from './Bookings'; 
 import { Login } from './Login';
 import { SignUp } from './SignUp';
+import { Availability } from './Availability';
 
 
 export function NavRouter() {
@@ -32,8 +33,9 @@ export function NavRouter() {
         <Route exact path="/bookings" component={Bookings} />
         <Route exact path="/contact-us" component={HomePage} />
         <Route exact path="/profile" component={Profile} />
-        <Route exact path="/login" component={Login} /> {/* I want to change this dynamically to be either login/sign out dependant on state */}
+        <Route exact path="/login" component={Login} /> 
         <Route exact path="/sign-up" component={SignUp} />
+        <Route exact path="/availabilities" component={Availability} />
         <Route exact path="/homepageloggedin" component={HomePageLoggedIn} /> {/*I want to have this link on the icon. That way you can still get to home/services/about us etc through home, but can also see your logged in home page*/}
       </Switch>
     </BrowserRouter>
