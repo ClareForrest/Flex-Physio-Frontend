@@ -1,9 +1,12 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 
-export function LoggedOutNav(e) {
+export function LoggedOutNavbar() {
   return (
-    <h1>working</h1>
+    <nav>
+      <Link to="/login">Login</Link>
+      <Link to="/sign-up">Sign Up</Link>
+    </nav>
   );
 }

@@ -14,18 +14,29 @@ import { Bookings } from './Bookings';
 import { Login } from './Login';
 import { SignUp } from './SignUp';
 import { Availability } from './Availability';
+import { useHistory } from 'react-router-dom'
 
 
 export function NavRouter() {
+  const history = useHistory()
+  
+  function logout(e) {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    history.push("/login")
+  }
+
   return (
-    <BrowserRouter>
+    <>
       <Nav>
         <Link to="/">Home</Link>   
         <Link to="/about">About</Link>   
         <Link to="/bookings">Bookings</Link>
         <Link to="/contact-us">Contact Us</Link>
         <Link to="/profile">Profile</Link>
+        <Link to="/" onClick={logout}>Logout</Link>
       </Nav>
+      
 
       <Switch>
         <Route exact path="/" component={HomePage} />
@@ -36,8 +47,7 @@ export function NavRouter() {
         <Route exact path="/login" component={Login} /> 
         <Route exact path="/sign-up" component={SignUp} />
         <Route exact path="/availabilities" component={Availability} />
-        <Route exact path="/homepageloggedin" component={HomePageLoggedIn} /> {/*I want to have this link on the icon. That way you can still get to home/services/about us etc through home, but can also see your logged in home page*/}
       </Switch>
-    </BrowserRouter>
+    </>
   );
 }
