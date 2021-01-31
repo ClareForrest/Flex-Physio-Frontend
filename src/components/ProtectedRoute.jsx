@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
-import { Nav } from "./Nav";
+import { Row, Col } from 'react-bootstrap';
+import { HeadingMain } from '../styled/main';
+import Button from 'react-bootstrap/Button';
 
 export function ProtectedRoute({ exact, path, component }) {
   const [auth, setAuth] = useState(false);
@@ -36,10 +38,35 @@ export function ProtectedRoute({ exact, path, component }) {
     return (
       !loading && (
         <>
-          <Nav />
-          <Route exact={exact} path={path} component={component} />
+        <Route exact={exact} path={path} component={component} />
+        <Row>
+          <HeadingMain>What would you like to do?</HeadingMain>
+        </Row>
+        <Row> 
+          <Col>
+          <div class="set-size">
+            <Button variant="secondary" size="lg">Make a Booking</Button>
+          </div>
+          </Col>
+          <Col>
+          <div class="set-size">
+            <Button variant="secondary" size="lg">View Current Booking</Button>
+          </div>
+          </Col>
+        </Row>
+        <Row> 
+          <Col>
+          <div class="set-size">
+            <Button variant="secondary" size="lg">View Previous Bookings</Button>
+          </div>
+          </Col>
+          <Col>
+          <div class="set-size">
+            <Button variant="secondary" size="lg">View/Edit Profile</Button>
+          </div>
+          </Col>
+        </Row>
         </>
-      )
-    );
-  }
-}
+    )
+  )}
+};

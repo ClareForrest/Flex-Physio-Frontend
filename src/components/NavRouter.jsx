@@ -8,7 +8,7 @@ import {
   Link 
 } from 'react-router-dom';
 import { HomePage } from './Homepage';
-import { HomePageLoggedIn } from './HomePageLoggedIn';
+import { ProtectedRoute } from './ProtectedRoute';
 import { Profile } from './Profile';
 import { Bookings } from './Bookings'; 
 import { Login } from './Login';
