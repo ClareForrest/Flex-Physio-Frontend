@@ -13,12 +13,12 @@ export function Availability() {
 
   return(
     <>
-    <h1>Schedule</h1>
+    <h1>Trainer Availabilities:</h1>
     <div>
-      {employee && employee.map((s) => {
+      {employee && employee.map((a) => {
         return (
-          <p key={s.id}>
-            <h2>{s.availability}</h2>
+          <p key={a.id}>
+            <h2>{a.availability}</h2>
           </p>
         );
       })}
