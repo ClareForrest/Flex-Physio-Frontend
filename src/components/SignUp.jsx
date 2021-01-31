@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { LoggedOutNav } from './LoggedOutNav'
 
 export function SignUp({ history }) {
   const [email, setEmail] = useState("");

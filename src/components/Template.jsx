@@ -23,7 +23,9 @@ export function Template(props) {
           </SidePanel>
         </Col>
         <Col>
+        <NavRouter>
           {props.children}
+        </NavRouter>
         </Col>
       </Row>
     </Container>

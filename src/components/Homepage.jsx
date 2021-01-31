@@ -4,11 +4,13 @@ import massage from '../massage.jpg';
 import physios from '../physios.jpg';
 import admin from '../admin.jpg';
 import '../styled/style.css';
+import { LoggedOutNav } from './LoggedOutNav';
 
 
 export function HomePage() {
   return(
     <div>
+        <LoggedOutNav/>
         <Row>
             <HeadingMain>About</HeadingMain>
         </Row>
