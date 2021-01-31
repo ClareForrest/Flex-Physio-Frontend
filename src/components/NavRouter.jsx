@@ -28,11 +28,23 @@ export function NavRouter() {
   }
 
   return (
+
+    <>
+      <Nav>
+        <Link to="/">Home</Link>   
+        <Link to="/about">About</Link>   
+        <Link to="/bookings">Bookings</Link>
+        <Link to="/contact-us">Contact Us</Link>
+        <Link to="/profile">Profile</Link>
+        <Link to="/" onClick={logout}>Logout</Link>
+      </Nav>
+      
     <BrowserRouter>
-      if (auth){
+      {/* if (auth){
         <LoggedInNav />
       } else {
         <LoggedOutNav />
+      } need to fix this logic to work */}
       }
 
       <Switch>
