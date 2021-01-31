@@ -1,11 +1,9 @@
 import '../styled/style.css';
-import Nav from 'react-bootstrap/Nav'
 import React from 'react';
 import { 
   BrowserRouter,
   Switch, 
   Route, 
-  Link 
 } from 'react-router-dom';
 import { HomePage } from './Homepage';
 import { ProtectedRoute } from './ProtectedRoute';
@@ -13,8 +11,11 @@ import { Profile } from './Profile';
 import { Bookings } from './Bookings'; 
 import { Login } from './Login';
 import { SignUp } from './SignUp';
+import { LoggedInNav } from './LoggedInNav';
+import { LoggedOutNav } from './LoggedOutNav';
 import { Availability } from './Availability';
 import { useHistory } from 'react-router-dom'
+
 
 
 export function NavRouter() {
@@ -27,6 +28,7 @@ export function NavRouter() {
   }
 
   return (
+<<<<<<< HEAD
     <>
       <Nav>
         <Link to="/">Home</Link>   
@@ -37,6 +39,14 @@ export function NavRouter() {
         <Link to="/" onClick={logout}>Logout</Link>
       </Nav>
       
+=======
+    <BrowserRouter>
+      if (auth){
+        <LoggedInNav />
+      } else {
+        <LoggedOutNav />
+      }
+>>>>>>> 6cfa8229e2b32a67b1dd9225c114f4c3009e9a63
 
       <Switch>
         <Route exact path="/" component={HomePage} />
