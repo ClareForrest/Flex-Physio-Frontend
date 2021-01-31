@@ -20,11 +20,11 @@ import { Availability } from './Availability';
 export function NavRouter() {
   return (
     <BrowserRouter>
-      if (auth){
+      {/* if (auth){
         <LoggedInNav />
       } else {
         <LoggedOutNav />
-      }
+      } need to fix this logic to work */}
 
       <Switch>
         <Route exact path="/" component={HomePage} />
