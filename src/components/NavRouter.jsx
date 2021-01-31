@@ -28,7 +28,7 @@ export function NavRouter() {
   }
 
   return (
-<<<<<<< HEAD
+
     <>
       <Nav>
         <Link to="/">Home</Link>   
@@ -39,14 +39,14 @@ export function NavRouter() {
         <Link to="/" onClick={logout}>Logout</Link>
       </Nav>
       
-=======
     <BrowserRouter>
-      if (auth){
+      {/* if (auth){
         <LoggedInNav />
       } else {
         <LoggedOutNav />
+      } need to fix this logic to work */}
       }
->>>>>>> 6cfa8229e2b32a67b1dd9225c114f4c3009e9a63
+
 
       <Switch>
         <Route exact path="/" component={HomePage} />
