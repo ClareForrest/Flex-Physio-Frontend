@@ -3,7 +3,8 @@ import React from 'react';
 import { 
   BrowserRouter,
   Switch, 
-  Route, 
+  Route,
+  Link
 } from 'react-router-dom';
 import { HomePage } from './Homepage';
 import { ProtectedRoute } from './ProtectedRoute';
@@ -28,24 +29,16 @@ export function NavRouter() {
   }
 
   return (
-
     <>
-      <Nav>
+      <nav>
         <Link to="/">Home</Link>   
         <Link to="/about">About</Link>   
         <Link to="/bookings">Bookings</Link>
         <Link to="/contact-us">Contact Us</Link>
         <Link to="/profile">Profile</Link>
         <Link to="/" onClick={logout}>Logout</Link>
-      </Nav>
+      </nav>
       
-    <BrowserRouter>
-      {/* if (auth){
-        <LoggedInNav />
-      } else {
-        <LoggedOutNav />
-      } need to fix this logic to work */}
-      }
 
       <Switch>
         <Route exact path="/" component={HomePage} />
