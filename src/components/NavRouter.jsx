@@ -50,7 +50,7 @@ export function NavRouter() {
         <Route exact path="/login" component={Login} /> 
         <Route exact path="/sign-up" component={SignUp} />
         <Route exact path="/availabilities" component={Availability} />
-        <Route exact path="/individualavailability" component={IndividualAvailability} />
+        <Route exact path="/availability/:id" component={IndividualAvailability} />
       </Switch>
     </>
   );

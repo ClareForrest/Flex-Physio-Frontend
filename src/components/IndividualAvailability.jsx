@@ -20,7 +20,9 @@ export function IndividualAvailability(props) {
       <>
         <div>
           <h2>testing</h2>
+          <p>{employee.availability}</p>
         </div>
       </>
     )
   )
+}
