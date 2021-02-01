@@ -15,6 +15,7 @@ import { SignUp } from './SignUp';
 import { LoggedInNav } from './LoggedInNav';
 import { LoggedOutNav } from './LoggedOutNav';
 import { Availability } from './Availability';
+import { IndividualAvailability } from './IndividualAvailability';
 import { useHistory } from 'react-router-dom'
 import { Nav } from '../styled/main';
 
@@ -49,6 +50,7 @@ export function NavRouter() {
         <Route exact path="/login" component={Login} /> 
         <Route exact path="/sign-up" component={SignUp} />
         <Route exact path="/availabilities" component={Availability} />
+        <Route exact path="/availability/:id" component={IndividualAvailability} />
       </Switch>
     </>
   );
