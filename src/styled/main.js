@@ -31,3 +31,9 @@ export const Card = styled.div`
   height:  100%;
   width: 100%;
 `
+
+export const Nav = styled.div`
+  width: 100%;
+  height: 45px;
+  background-color: black;
+`
