@@ -20,6 +20,7 @@ import { useHistory } from 'react-router-dom';
 import { Nav } from '../styled/main';
 import { AllBookings } from './AllBookings';
 import { CreateBooking } from './CreateBooking';
+import { CreateAddress } from './CreateAddress';
 
 
 
@@ -56,6 +57,7 @@ export function NavRouter() {
         <Route exact path="/availabilities" component={Availability} />
         <Route exact path="/availability/:id" component={IndividualAvailability} />
         <Route exact path="/bookings/history" component={AllBookings} />
+        <Route exact path="/create-address" component={CreateAddress} />
       </Switch>
     </>
   );

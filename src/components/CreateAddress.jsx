@@ -6,13 +6,15 @@ export function CreateAddress( { history } ) {
   const [state, setState] = useState("");
   const [postcode, setPostcode] = useState("");
 
+
   async function onFormSubmit(e) {
     try {
       e.preventDefault();
-      await fetch("http://localhost:3000/api/adresses", {
+      await fetch("http://localhost:3000/api/addresses", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`
         },
         body: JSON.stringify({ address: { 
           street, 
@@ -39,7 +41,7 @@ export function CreateAddress( { history } ) {
           name="street"
           id="street"
           value={street}
-          onChange={(e) => SetStreet(e.target.value)}
+          onChange={(e) => setStreet(e.target.value)}
           />
           <label htmlFor="suburb">Suburb:</label>
           <input
