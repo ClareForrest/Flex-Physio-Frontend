@@ -40,6 +40,7 @@ export function Profile() {
         <h6>First Name: {user.first_name}</h6>
         <h6>Last Name: {user.last_name}</h6>
         <h6>Current Email: {user.email}</h6>
+        <h6>Current contact number: {user.phone_number}</h6>
       <Button variant="secondary" onClick={() => setModalShow(true)}>
         Edit
       </Button>
