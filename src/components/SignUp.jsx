@@ -3,9 +3,9 @@ import React, { useState } from "react";
 export function SignUp({ history }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [phonenumber, setPhonenumber] = useState("");
+  const [first_name, setFirstname] = useState("");
+  const [last_name, setLastname] = useState("");
+  const [phone_number, setPhonenumber] = useState("");
   
 
   async function onFormSubmit(event) {
@@ -16,7 +16,7 @@ export function SignUp({ history }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ user: { email, password } }),
+        body: JSON.stringify({ user: { first_name, last_name, email, password, phone_number } }),
       });
       if (response.status >= 400) {
         throw new Error("incorrect credentials");
@@ -26,7 +26,7 @@ export function SignUp({ history }) {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ auth: { email, password } }),
+          body: JSON.stringify({ auth: { first_name, last_name, email, password, phone_number } }),
         });
         const { jwt } = await response.json();
         localStorage.setItem("token", jwt);
@@ -41,20 +41,20 @@ export function SignUp({ history }) {
     <>
       <h1>Sign Up</h1>
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="firstName">first name</label>
+        <label htmlFor="first_Name">first name</label>
         <input
-          type="firstname"
-          name="firstname"
-          id="firstname"
-          value={firstname}
+          type="first_name"
+          name="first_name"
+          id="first_name"
+          value={first_name}
           onChange={(e) => setFirstname(e.target.value)}
         />
-        <label htmlFor="lastName">last name</label>
+        <label htmlFor="last_Name">last name</label>
         <input
-          type="lastname"
-          name="lastname"
-          id="lastname"
-          value={lastname}
+          type="last_name"
+          name="last_name"
+          id="last_name"
+          value={last_name}
           onChange={(e) => setLastname(e.target.value)}
         />
         <label htmlFor="email">Email</label>
@@ -72,6 +72,14 @@ export function SignUp({ history }) {
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+        />
+        <label htmlFor="phone_number">Phone Number:</label>
+        <input
+          type="phone_number"
+          name="phone_number"
+          id="phone_number"
+          value={phone_number}
+          onChange={(e) => setPhonenumber(e.target.value)}
         />
         <input type="submit" value="Submit" />
       </form>
