@@ -43,7 +43,7 @@ export function SignUp({ history }) {
       <form onSubmit={onFormSubmit}>
         <label htmlFor="first_Name">first name</label>
         <input
-          type="first_name"
+          type="text"
           name="first_name"
           id="first_name"
           value={first_name}
@@ -51,7 +51,7 @@ export function SignUp({ history }) {
         />
         <label htmlFor="last_Name">last name</label>
         <input
-          type="last_name"
+          type="text"
           name="last_name"
           id="last_name"
           value={last_name}
@@ -59,7 +59,7 @@ export function SignUp({ history }) {
         />
         <label htmlFor="email">Email</label>
         <input
-          type="email"
+          type="text"
           name="email"
           id="email"
           value={email}
@@ -67,7 +67,7 @@ export function SignUp({ history }) {
         />
         <label htmlFor="password">Password</label>
         <input
-          type="password"
+          type="text"
           name="password"
           id="password"
           value={password}
@@ -75,7 +75,7 @@ export function SignUp({ history }) {
         />
         <label htmlFor="phone_number">Phone Number:</label>
         <input
-          type="phone_number"
+          type="number"
           name="phone_number"
           id="phone_number"
           value={phone_number}
