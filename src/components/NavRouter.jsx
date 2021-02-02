@@ -16,8 +16,9 @@ import { LoggedInNav } from './LoggedInNav';
 import { LoggedOutNav } from './LoggedOutNav';
 import { Availability } from './Availability';
 import { IndividualAvailability } from './IndividualAvailability';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 import { Nav } from '../styled/main';
+
 
 
 export function NavRouter() {
@@ -26,6 +27,7 @@ export function NavRouter() {
   function logout(e) {
     e.preventDefault();
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     history.push("/login")
   }
 
@@ -46,7 +48,7 @@ export function NavRouter() {
         <Route exact path="/about" component={HomePage} />
         <Route exact path="/bookings" component={Bookings} />
         <Route exact path="/contact-us" component={HomePage} />
-        <Route exact path="/profile" component={Profile} />
+        <ProtectedRoute exact path="/profile" component={Profile} />
         <Route exact path="/login" component={Login} /> 
         <Route exact path="/sign-up" component={SignUp} />
         <Route exact path="/availabilities" component={Availability} />

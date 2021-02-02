@@ -2,7 +2,7 @@ import { HeadingMain } from '../styled/main';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -31,12 +31,13 @@ function MyVerticallyCenteredModal(props) {
 
 export function Profile() {
   const [modalShow, setModalShow] = useState(false);
-
+  const user = JSON.parse(localStorage.getItem("user"))
   return (
     <>
       <Row>
         <HeadingMain>Your Contact Details:</HeadingMain>
       </Row>
+        <h6>Your Name: {user.first_name}</h6>
       <Button variant="secondary" onClick={() => setModalShow(true)}>
         Edit
       </Button>

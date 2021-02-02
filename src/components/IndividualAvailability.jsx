@@ -1,6 +1,5 @@
 import React, { useState, useEffect }  from 'react';
 
-
 export function IndividualAvailability(props) {
   const [employee, setEmployee] = useState(null);
   const id = props.match.params.id;
@@ -12,6 +11,7 @@ export function IndividualAvailability(props) {
         console.log(id)
         console.log(employee)
         setEmployee(employee);
+  
       });
   }, [id])
 
@@ -19,9 +19,10 @@ export function IndividualAvailability(props) {
     employee && (
       <>
         <div>
-          <h2>testing</h2>
+          <h2>Your Current Availabilities:</h2>
           <p>{employee.availability}</p>
         </div>
+        
       </>
     )
   )

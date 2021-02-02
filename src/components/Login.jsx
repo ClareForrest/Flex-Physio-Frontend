@@ -25,7 +25,7 @@ export function Login({ history }) {
       } else {
         const { jwt } = await response.json();
         localStorage.setItem("token", jwt);
-        history.push("/..");
+        history.push("/");
       }
     } catch (err) {
       setErrMessage(err.message);
