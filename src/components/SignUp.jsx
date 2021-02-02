@@ -5,7 +5,7 @@ export function SignUp({ history }) {
   const [password, setPassword] = useState("");
   const [first_name, setFirstname] = useState("");
   const [last_name, setLastname] = useState("");
-  const [phonenumber, setPhonenumber] = useState("");
+  const [phone_number, setPhonenumber] = useState("");
   
 
   async function onFormSubmit(event) {
@@ -16,7 +16,7 @@ export function SignUp({ history }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ user: { first_name, last_name, email, password } }),
+        body: JSON.stringify({ user: { first_name, last_name, email, password, phone_number } }),
       });
       if (response.status >= 400) {
         throw new Error("incorrect credentials");
@@ -26,7 +26,7 @@ export function SignUp({ history }) {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ auth: { first_name, last_name, email, password } }),
+          body: JSON.stringify({ auth: { first_name, last_name, email, password, phone_number } }),
         });
         const { jwt } = await response.json();
         localStorage.setItem("token", jwt);
@@ -72,6 +72,14 @@ export function SignUp({ history }) {
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+        />
+        <label htmlFor="phone_number">Phone Number:</label>
+        <input
+          type="phone_number"
+          name="phone_number"
+          id="phone_number"
+          value={phone_number}
+          onChange={(e) => setPhonenumber(e.target.value)}
         />
         <input type="submit" value="Submit" />
       </form>
