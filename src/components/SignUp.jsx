@@ -3,8 +3,8 @@ import React, { useState } from "react";
 export function SignUp({ history }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
+  const [first_name, setFirstname] = useState("");
+  const [last_name, setLastname] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
   
 
@@ -16,7 +16,7 @@ export function SignUp({ history }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ user: { email, password } }),
+        body: JSON.stringify({ user: { first_name, last_name, email, password } }),
       });
       if (response.status >= 400) {
         throw new Error("incorrect credentials");
@@ -26,7 +26,7 @@ export function SignUp({ history }) {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ auth: { email, password } }),
+          body: JSON.stringify({ auth: { first_name, last_name, email, password } }),
         });
         const { jwt } = await response.json();
         localStorage.setItem("token", jwt);
@@ -41,20 +41,20 @@ export function SignUp({ history }) {
     <>
       <h1>Sign Up</h1>
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="firstName">first name</label>
+        <label htmlFor="first_Name">first name</label>
         <input
-          type="firstname"
-          name="firstname"
-          id="firstname"
-          value={firstname}
+          type="first_name"
+          name="first_name"
+          id="first_name"
+          value={first_name}
           onChange={(e) => setFirstname(e.target.value)}
         />
-        <label htmlFor="lastName">last name</label>
+        <label htmlFor="last_Name">last name</label>
         <input
-          type="lastname"
-          name="lastname"
-          id="lastname"
-          value={lastname}
+          type="last_name"
+          name="last_name"
+          id="last_name"
+          value={last_name}
           onChange={(e) => setLastname(e.target.value)}
         />
         <label htmlFor="email">Email</label>
