@@ -37,7 +37,9 @@ export function Profile() {
       <Row>
         <HeadingMain>Your Contact Details:</HeadingMain>
       </Row>
-        <h6>Your Name: {user.first_name}</h6>
+        <h6>First Name: {user.first_name}</h6>
+        <h6>Last Name: {user.last_name}</h6>
+        <h6>Current Email: {user.email}</h6>
       <Button variant="secondary" onClick={() => setModalShow(true)}>
         Edit
       </Button>
