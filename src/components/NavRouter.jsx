@@ -9,7 +9,7 @@ import {
 import { HomePage } from './Homepage';
 import { ProtectedRoute } from './ProtectedRoute';
 import { Profile } from './Profile';
-import { Bookings } from './Bookings'; 
+import { Bookings } from './CreateBooking'; 
 import { Login } from './Login';
 import { SignUp } from './SignUp';
 import { LoggedInNav } from './LoggedInNav';
@@ -18,6 +18,8 @@ import { Availability } from './Availability';
 import { IndividualAvailability } from './IndividualAvailability';
 import { useHistory } from 'react-router-dom';
 import { Nav } from '../styled/main';
+import { AllBookings } from './AllBookings';
+import { CreateBooking } from './CreateBooking';
 
 
 
@@ -46,13 +48,14 @@ export function NavRouter() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/about" component={HomePage} />
-        <Route exact path="/bookings" component={Bookings} />
+        <Route exact path="/bookings" component={CreateBooking} />
         <Route exact path="/contact-us" component={HomePage} />
         <ProtectedRoute exact path="/profile" component={Profile} />
         <Route exact path="/login" component={Login} /> 
         <Route exact path="/sign-up" component={SignUp} />
         <Route exact path="/availabilities" component={Availability} />
         <Route exact path="/availability/:id" component={IndividualAvailability} />
+        <Route exact path="/bookings/history" component={AllBookings} />
       </Switch>
     </>
   );
