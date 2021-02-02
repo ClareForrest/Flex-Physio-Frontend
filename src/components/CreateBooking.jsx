@@ -2,7 +2,7 @@ import { HeadingMain, HeadingSub } from '../styled/main';
 import React, { useState, useEffect } from "react";
 import Select from 'react-select';
   
-  export function Bookings(){
+  export function CreateBooking(){
     // Select a location. Dropdown menu from bookings.
     // Bookings table has location, date, time (this will need to connect to employees availability)
     // Services is separate table with name (massage/physio) and cost 
@@ -33,10 +33,14 @@ import Select from 'react-select';
         fetch('http://localhost:3000/api/employees')
         .then((response) => response.json())
         .then((body) => {
-          const practitioner = body
-    // needs to show the first_name. accessible from user_id??
-          console.log(practitioner)
-          setAllPractitioners(body)
+          const names = body.map((employee) => {
+            return {
+              value: `${employee.first_name} ${employee.last_name}`,
+              label: `${employee.first_name} ${employee.last_name}`
+            }
+          })
+          console.log(body)
+          setAllPractitioners(names)
         });
       }, []);
 
@@ -108,7 +112,7 @@ import Select from 'react-select';
           });
           const { jwt } = await response.json();
           localStorage.setItem("token", jwt);
-          // history.push("/subscriptions");
+          // want to redirect to CurrentBooking page 
         }
       } catch (err) {
         console.log(err.message);
