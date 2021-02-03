@@ -83,7 +83,6 @@ import Select from 'react-select';
     } 
     
     const [cost, setCost] = useState(null)
-
     // interpolate the service selected to then pull the cost from the cost table
     function handleChangeTime(event) {
       setCost(`${service}.id.event.target.value, ${service}.value: event.label`)
