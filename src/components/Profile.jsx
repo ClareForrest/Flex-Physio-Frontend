@@ -24,8 +24,14 @@ function GetProfile(props) {
       address && (
         <>
           <div>
-            <h2>Your Current Address:</h2>
-            <p>{address.street}</p>
+            <h5>Your Current Address:</h5>
+            <ul>
+              <li>{address.street}</li>
+              <li>{address.suburb}</li>
+              <li>{address.state}</li>
+              <li>{address.postcode}</li>
+            </ul>
+            
           </div>
           
         </>
