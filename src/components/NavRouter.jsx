@@ -21,6 +21,7 @@ import { Nav } from '../styled/main';
 import { AllBookingsFunction } from './AllBookings';
 import { CreateBooking } from './CreateBooking';
 import { CurrentBooking } from './CurrentBooking';
+import { CreateAddress } from './CreateAddress';
 
 
 
@@ -58,6 +59,7 @@ export function NavRouter() {
         <Route exact path="/availability/:id" component={IndividualAvailability} />
         <Route exact path="/bookings/history" component={AllBookingsFunction} />
         <Route exact path="/bookings/current" component={CurrentBooking} />
+        <Route exact path="/create-address" component={CreateAddress} />
       </Switch>
     </>
   );
