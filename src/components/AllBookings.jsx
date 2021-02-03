@@ -2,9 +2,6 @@ import { HeadingMain } from '../styled/main';
 import React, { useState, useEffect } from "react";
 import Card from 'react-bootstrap/Card';
 
-// i want to access each item in the Array. the items are objects. 
-// once i have an individual object, 
-// then i want to access the values from its keys
   export function AllBookingsFunction(){
     const [allBookings, setAllBookings] = useState([])
     useEffect(() => {
@@ -13,7 +10,6 @@ import Card from 'react-bootstrap/Card';
       .then((body) => setAllBookings(body))
     }, []);
 
-    console.log(allBookings)
     return (
       <>
         <HeadingMain>Your Previous Bookings</HeadingMain>

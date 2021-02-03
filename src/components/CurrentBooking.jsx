@@ -7,20 +7,27 @@ import Card from 'react-bootstrap/Card';
     useEffect(() => {
       fetch(`${process.env.REACT_APP_BACKEND_URL}/api/bookings/current`)
       .then((response) => response.json())
-      .then((body) => {
-        // needs to show the most recently saved booking. Would that be .last??
-        console.log(body)
-        setCurrentBooking(body.last)
-      });
+      .then((body) => setCurrentBooking(body))
     }, []);
+    // shows the most recently saved booking in the array
 
     return (
       <>
         <HeadingMain>Your Current Booking</HeadingMain>
-        <Card>
-
-
-        </Card>
+            {currentBooking.map((booking, index) => {
+              return (
+                <div key={index}>
+                  <Card class="booking-cards">
+                    <p>Location: {booking.location}</p>
+                    <p>Date: {booking.date}</p>
+                    <p>Time: {booking.time}</p>
+                    <p>Service: {booking.service}</p>
+                    <p>Cost: ${booking.cost}</p>
+                  </Card>
+                </div>
+              )
+            }
+          )}
     </>
   );
 }
