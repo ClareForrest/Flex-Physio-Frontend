@@ -13,7 +13,7 @@ export function Login({ history }) {
       auth: { email, password },
     };
     try {
-      const response = await fetch("http://localhost:3000/api/sign-in", {
+      const response = await fetch("REACT_APP_BACKEND_URL/api/sign-in", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

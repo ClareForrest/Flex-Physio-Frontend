@@ -30,7 +30,7 @@ import Select from 'react-select';
 // maps through all employees and show as options in Select dropdown
       const [allPractitioners, setAllPractitioners] = useState([]);
       useEffect(() => {
-        fetch('http://localhost:3000/api/employees')
+        fetch('REACT_APP_BACKEND_URLapi/employees')
         .then((response) => response.json())
         .then((body) => {
           const names = body.map((employee) => {
@@ -92,7 +92,7 @@ import Select from 'react-select';
     async function onFormSubmit(event) {
       event.preventDefault();
       try {
-        const response = await fetch("http://localhost:3000/api/booking", {
+        const response = await fetch("REACT_APP_BACKEND_URL/api/booking", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -102,7 +102,7 @@ import Select from 'react-select';
         if (response.status >= 400) {
           throw new Error("incorrect credentials");
         } else {
-          const response = await fetch("http://localhost:3000/api/booking", {
+          const response = await fetch("REACT_APP_BACKEND_URL/api/booking", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

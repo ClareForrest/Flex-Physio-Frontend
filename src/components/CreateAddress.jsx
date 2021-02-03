@@ -10,7 +10,7 @@ export function CreateAddress( { history } ) {
   async function onFormSubmit(e) {
     try {
       e.preventDefault();
-      await fetch("http://localhost:3000/api/addresses", {
+      await fetch("REACT_APP_BACKEND_URL/api/addresses", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
