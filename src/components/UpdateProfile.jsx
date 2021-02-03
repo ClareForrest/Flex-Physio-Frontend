@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { HeadingMain } from './styled/HeadingMain';
 // import { useParams } from "react-router-dom";
 
 export function UpdateProfile() {
@@ -62,7 +63,7 @@ export function UpdateProfile() {
 
   return (
     <>
-      <h1>Edit Profile:</h1>
+      <HeadingMain>Edit Profile:</HeadingMain>
       <form onSubmit={onEditSubmit}>
         <div>
           <label htmlFor="email">Email:</label>

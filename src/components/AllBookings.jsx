@@ -11,6 +11,7 @@ import Card from 'react-bootstrap/Card';
     }, []);
 
     return (
+      allBookings && (
       <>
         <HeadingMain>Your Previous Bookings</HeadingMain>
             {allBookings.map((booking, index) => {
@@ -28,5 +29,6 @@ import Card from 'react-bootstrap/Card';
             }
           )}
       </>
+      )
     );
   }
