@@ -1,7 +1,6 @@
 import '../styled/style.css';
 import React from 'react';
 import { 
-  BrowserRouter,
   Switch, 
   Route,
   Link
@@ -9,11 +8,8 @@ import {
 import { HomePage } from './Homepage';
 import { ProtectedRoute } from './ProtectedRoute';
 import { Profile } from './Profile';
-import { Bookings } from './CreateBooking'; 
 import { Login } from './Login';
 import { SignUp } from './SignUp';
-import { LoggedInNav } from './LoggedInNav';
-import { LoggedOutNav } from './LoggedOutNav';
 import { Availability } from './Availability';
 import { IndividualAvailability } from './IndividualAvailability';
 import { useHistory } from 'react-router-dom';
@@ -22,7 +18,7 @@ import { AllBookingsFunction } from './AllBookings';
 import { CreateBooking } from './CreateBooking';
 import { CurrentBooking } from './CurrentBooking';
 import { CreateAddress } from './CreateAddress';
-
+import { UpdateProfile } from './UpdateProfile';
 
 
 export function NavRouter() {
@@ -60,6 +56,7 @@ export function NavRouter() {
         <Route exact path="/bookings/history" component={AllBookingsFunction} />
         <Route exact path="/bookings/current" component={CurrentBooking} />
         <Route exact path="/create-address" component={CreateAddress} />
+        <Route exact path="/update-profile" component={UpdateProfile} />
       </Switch>
     </>
   );

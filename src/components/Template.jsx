@@ -18,7 +18,7 @@ export function Template(props) {
             <img src={logo} alt="Logo"/>
             <Card>
               {/* Want to use an API to get changing quotes */}
-              <p>Health Quote: "An apple a day, keeps the doctor away" </p>
+              <p> "An apple a day, keeps the doctor away" </p>
             </Card>
           </SidePanel>
         </Col>

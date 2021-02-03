@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
   export function AllBookingsFunction(){
     const [allBookings, setAllBookings] = useState([])
     useEffect(() => {
-      fetch('http://localhost:3000/api/bookings/history')
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/api/bookings/history`)
       .then((response) => response.json())
       .then((body) => setAllBookings(body))
     }, []);

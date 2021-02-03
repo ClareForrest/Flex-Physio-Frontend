@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
   export function CurrentBooking(){
     const [currentBooking, setCurrentBooking] = useState([])
     useEffect(() => {
-      fetch('http://localhost:3000/api/bookings/current')
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/api/bookings/current`)
       .then((response) => response.json())
       .then((body) => setCurrentBooking(body))
     }, []);
