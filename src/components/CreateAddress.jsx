@@ -24,7 +24,7 @@ export function CreateAddress( { history } ) {
         },
       }),
     });
-    history.push("/");
+    history.push("/profile");
   } catch (err) {
     console.log(err.message);
     }
