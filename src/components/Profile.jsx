@@ -2,7 +2,42 @@ import { HeadingMain } from '../styled/main';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+
+function GetProfile(props) {
+  const [address, setAddress] = useState(null);
+  const user = JSON.parse(localStorage.getItem("user"))
+  const id = user.id
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/api/addresses/${id}`)
+      .then((res) => res.json())
+      .then((address) => {
+        console.log(id)
+        console.log(address)
+        setAddress(address);
+
+      });
+    }, [id])
+    return (
+      address && (
+        <>
+          <div>
+            <h5>Your Current Address:</h5>
+            <ul>
+              <li>{address.street}</li>
+              <li>{address.suburb}</li>
+              <li>{address.state}</li>
+              <li>{address.postcode}</li>
+            </ul>
+            
+          </div>
+          
+        </>
+      )
+    )
+}
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -47,6 +82,7 @@ export function Profile() {
       <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)}/>
       <Row>
         <HeadingMain>Your Address Details:</HeadingMain>
+        <GetProfile></GetProfile>
       </Row>
       <Button variant="secondary" onClick={() => setModalShow(true)}>
         Edit
