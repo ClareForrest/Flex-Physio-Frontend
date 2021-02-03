@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 
 export function UpdateProfile() {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [first_name, setFirstname] = useState("");
   const [last_name, setLastname] = useState("");
   const [phone_number, setPhonenumber] = useState("");
-  const { id } = useParams();
+  // const { id } = useParams();
   const history = useHistory();
+
+  const user = JSON.parse(localStorage.getItem("user"))
+  const id = user.id
 
   useEffect(() => {
     fetch(`http://localhost:3000/api/profile/${id}`, {
@@ -17,27 +21,30 @@ export function UpdateProfile() {
       },
     })
       .then((res) => res.json())
-      .then((profile) => {
-        setEmail(profile.email);
-        setPassword(profile.password);
-        setFirstname(profile.first_name)
-        setLastname(profile.last_name);
-        setPhonenumber(profile.phone_number);
+      .then((user) => {
+        setEmail(user.email);
+        setPassword(user.password);
+        setFirstname(user.first_name)
+        setLastname(user.last_name);
+        setPhonenumber(user.phone_number);
       });
   }, [id]);
 
 
-  async function onFormSubmit(e) {
+  
+
+  async function onEditSubmit(e) {
+    e.preventDefault()
     try {
-      e.preventDedault();
-      await fetch(`http://localhost:3000/api/profile/${id}`, {
+      
+      await fetch(`http://localhost:3000/api/update-profile/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify({
-          profile: {
+          user: {
             email: email,
             password: password,
             first_name: first_name,
@@ -55,9 +62,9 @@ export function UpdateProfile() {
   return (
     <>
       <h1>Edit Profile:</h1>
-      <form onSubmit={onFormSubmit}>
+      <form onSubmit={onEditSubmit}>
         <div>
-          <label htmlFor="email"></label>
+          <label htmlFor="email">Email:</label>
           <input
             type="text"
             name="email"
@@ -67,7 +74,7 @@ export function UpdateProfile() {
           />
         </div>
         <div>
-          <label htmlFor="password"></label>
+          <label htmlFor="password">Password:</label>
           <input
             type="text"
             name="password"
@@ -77,7 +84,7 @@ export function UpdateProfile() {
           />
         </div>
         <div>
-          <label htmlFor="first_name"></label>
+          <label htmlFor="first_name">First Name:</label>
           <input
             type="text"
             name="first_name"
@@ -87,7 +94,7 @@ export function UpdateProfile() {
           />
         </div>
         <div>
-          <label htmlFor="last_name"></label>
+          <label htmlFor="last_name">Last Name:</label>
           <input
             type="text"
             name="last_name"
@@ -97,7 +104,7 @@ export function UpdateProfile() {
           />
         </div>
         <div>
-          <label htmlFor="phone_number"></label>
+          <label htmlFor="phone_number">Phone Number:</label>
           <input
             type="number"
             name="phone_number"
