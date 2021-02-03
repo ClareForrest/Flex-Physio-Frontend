@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { HeadingMain } from '../styled/main';
 
 export function CreateAddress( { history } ) {
   const [street, setStreet] = useState("");
@@ -10,7 +11,7 @@ export function CreateAddress( { history } ) {
   async function onFormSubmit(e) {
     try {
       e.preventDefault();
-      await fetch("REACT_APP_BACKEND_URL/api/addresses", {
+      await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/addresses`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,7 +33,7 @@ export function CreateAddress( { history } ) {
 
   return (
     <>
-      <h2>Add your Address details:</h2>
+      <HeadingMain>Add your Address details:</HeadingMain>
       <form onSubmit={onFormSubmit}>
         <div>
           <label htmlFor="street">Street:</label>

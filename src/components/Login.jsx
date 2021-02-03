@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Link } from 'react';
-import { HeadingSub } from '../styled/main';
+import Button from 'react-bootstrap/Button';
 
 export function Login({ history }) {
   const [email, setEmail] = useState("");
@@ -13,7 +12,7 @@ export function Login({ history }) {
       auth: { email, password },
     };
     try {
-      const response = await fetch("REACT_APP_BACKEND_URL/api/sign-in", {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/sign-in`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,7 +33,7 @@ export function Login({ history }) {
 
   return (
     <>
-      <button type="button" class="btn btn-secondary">Login</button>
+      <Button variant="secondary">Login</Button>
       {errMessage && <span>{errMessage}</span>}
       <form onSubmit={onFormSubmit}>
         <label htmlFor="email">Email</label>

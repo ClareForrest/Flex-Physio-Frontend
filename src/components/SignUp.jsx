@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { HeadingMain, HeadingSub } from '../styled/main';
 
 export function SignUp({ history }) {
   const [email, setEmail] = useState("");
@@ -11,7 +12,7 @@ export function SignUp({ history }) {
   async function onFormSubmit(event) {
     event.preventDefault();
     try {
-      const response = await fetch("REACT_APP_BACKEND_URL/api/sign-up", {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/sign-up`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -21,7 +22,7 @@ export function SignUp({ history }) {
       if (response.status >= 400) {
         throw new Error("incorrect credentials");
       } else {
-        const response = await fetch("REACT_APP_BACKEND_URL/api/sign-in", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/sign-in`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -39,9 +40,9 @@ export function SignUp({ history }) {
 
   return (
     <>
-      <h1>Sign Up</h1>
+      <HeadingMain>Sign Up</HeadingMain>
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="first_Name">first name</label>
+        <label htmlFor="first_Name">First Name</label>
         <input
           type="text"
           name="first_name"
@@ -49,7 +50,7 @@ export function SignUp({ history }) {
           value={first_name}
           onChange={(e) => setFirstname(e.target.value)}
         />
-        <label htmlFor="last_Name">last name</label>
+        <label htmlFor="last_Name">Last Name</label>
         <input
           type="text"
           name="last_name"

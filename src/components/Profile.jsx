@@ -2,7 +2,7 @@ import { HeadingMain } from '../styled/main';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
-import React, {useReducer, useState} from 'react';
+import React, { useState } from 'react';
 
 function MyVerticallyCenteredModal(props) {
   return (
