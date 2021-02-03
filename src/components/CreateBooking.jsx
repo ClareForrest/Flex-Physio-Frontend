@@ -30,7 +30,7 @@ import Select from 'react-select';
 // maps through all employees and show as options in Select dropdown
       const [allPractitioners, setAllPractitioners] = useState([]);
       useEffect(() => {
-        fetch('REACT_APP_BACKEND_URLapi/employees')
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/employees`)
         .then((response) => response.json())
         .then((body) => {
           const names = body.map((employee) => {
@@ -82,17 +82,10 @@ import Select from 'react-select';
       setTime({id: event.target.value, value: event.label})
     } 
 
-    const [cost, setCost] = useState(null)
-
-    // interpolate the service selected to then pull the cost from the cost table
-    function handleChangeTime(event) {
-      setCost(`${service}.id.event.target.value, ${service}.value: event.label`)
-    }
-
     async function onFormSubmit(event) {
       event.preventDefault();
       try {
-        const response = await fetch("REACT_APP_BACKEND_URL/api/booking", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/booking`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -102,7 +95,7 @@ import Select from 'react-select';
         if (response.status >= 400) {
           throw new Error("incorrect credentials");
         } else {
-          const response = await fetch("REACT_APP_BACKEND_URL/api/booking", {
+          const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/booking`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

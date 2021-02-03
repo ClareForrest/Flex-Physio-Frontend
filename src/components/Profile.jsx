@@ -39,7 +39,6 @@ function GetProfile(props) {
     )
 }
 
-
 function MyVerticallyCenteredModal(props) {
   return (
     <Modal
