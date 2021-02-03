@@ -5,7 +5,7 @@ export function IndividualAvailability(props) {
   const id = props.match.params.id;
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/availability/${id}`)
+    fetch(`REACT_APP_BACKEND_URL/api/availability/${id}`)
       .then((res) => res.json())
       .then((employee) => {
         console.log(id)

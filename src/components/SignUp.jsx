@@ -11,7 +11,7 @@ export function SignUp({ history }) {
   async function onFormSubmit(event) {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/api/sign-up", {
+      const response = await fetch("REACT_APP_BACKEND_URL/api/sign-up", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -21,7 +21,7 @@ export function SignUp({ history }) {
       if (response.status >= 400) {
         throw new Error("incorrect credentials");
       } else {
-        const response = await fetch("http://localhost:3000/api/sign-in", {
+        const response = await fetch("REACT_APP_BACKEND_URL/api/sign-in", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

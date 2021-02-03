@@ -3,7 +3,7 @@ import React, { useState, useEffect }  from 'react';
 export function Availability() {
   const [employee, setEmployee] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:3000/api/availabilities')
+    fetch('REACT_APP_BACKEND_URL/api/availabilities')
     .then((response) => response.json())
     .then((body) => {
       console.log(body);
