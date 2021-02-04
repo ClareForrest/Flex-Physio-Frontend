@@ -26,7 +26,7 @@ export function UpdateProfile() {
       .then((user) => {
         setEmail(user.email);
         setPassword(user.password);
-        setFirstname(user.first_name)
+        setFirstname(user.first_name);
         setLastname(user.last_name);
         setPhonenumber(user.phone_number);
       });
@@ -63,7 +63,7 @@ export function UpdateProfile() {
 
   return (
     <>
-      <HeadingMain>Edit Profile:</HeadingMain>
+      <h1>Edit Profile:</h1>
       <form onSubmit={onEditSubmit}>
         <div>
           <label htmlFor="email">Email:</label>

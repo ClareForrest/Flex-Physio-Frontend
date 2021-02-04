@@ -19,6 +19,9 @@ import { CreateBooking } from './CreateBooking';
 import { CurrentBooking } from './CurrentBooking';
 import { CreateAddress } from './CreateAddress';
 import { UpdateProfile } from './UpdateProfile';
+import { EditBooking } from './EditBooking';
+import { UpdateAddress } from './UpdateAddress';
+
 
 export function NavRouter() {
   const history = useHistory()
@@ -56,6 +59,8 @@ export function NavRouter() {
         <Route exact path="/bookings/current" component={CurrentBooking} />
         <Route exact path="/create-address" component={CreateAddress} />
         <Route exact path="/update-profile" component={UpdateProfile} />
+        <Route exact path="/booking/show/:id" component={EditBooking} />
+        <Route exact path="/update-address" component={UpdateAddress} />
       </Switch>
     </>
   );
