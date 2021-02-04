@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-
 export function UpdateAddress() {
   const [street, setStreet] = useState("");
   const [suburb, setSuburb] = useState("");
@@ -19,11 +18,11 @@ export function UpdateAddress() {
       },
     })
     .then((res) => res.json())
-      .then((user) => {
-        setStreet(user.street);
-        setSuburb(user.suburb);
-        setState(user.state);
-        setPostcode(user.postcode);
+      .then((address) => {
+        setStreet(address.street);
+        setSuburb(address.suburb);
+        setState(address.state);
+        setPostcode(address.postcode);
   });
   }, [id]);
 
@@ -37,7 +36,7 @@ export function UpdateAddress() {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify({
-          user: {
+          address: {
             street: street,
             suburb: suburb,
             state: state,
@@ -45,7 +44,7 @@ export function UpdateAddress() {
           },
         }),
       });
-      history.push("/profile");
+      history.push("/update-address");
     } catch (err) {
       console.log(err.message);
     }
@@ -53,7 +52,7 @@ export function UpdateAddress() {
 
   return (
     <>
-      <HeadingMain>Edit Address:</HeadingMain>
+      <h1>Edit Address:</h1>
       <form onSubmit={onUpdateSubmit}>
         <div>
         <label htmlFor="street">Street:</label>
