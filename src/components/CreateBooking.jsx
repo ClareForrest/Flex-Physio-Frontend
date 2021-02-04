@@ -30,24 +30,28 @@ import Select from 'react-select';
 // maps through all employees and show as options in Select dropdown
       const [allPractitioners, setAllPractitioners] = useState([]);
       useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/employees`)
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/employees`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          }
+        })
         .then((response) => response.json())
         .then((body) => {
+          console.log(body)
           const names = body.map((employee) => {
             return {
               value: `${employee.first_name} ${employee.last_name}`,
               label: `${employee.first_name} ${employee.last_name}`
             }
           })
-          console.log(body)
           setAllPractitioners(names)
         });
       }, []);
 
-    const [practitioners, setPractitioners] = useState(null)
+    const [practitioner, setPractitioner] = useState(null)
     
-    function handleChangePractitioners(event) {
-      setPractitioners({id: event.target.value, value: event.label})
+    function handleChangePractitioners(selectedPractitioner) {
+      setPractitioner(selectedPractitioner)
     } 
 
     // would like to get this displayed and selected through the calendar app
@@ -94,6 +98,7 @@ import Select from 'react-select';
         const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/booking`, {
           method: "POST",
           headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ booking: { location, service, date, time } }),
@@ -117,20 +122,21 @@ import Select from 'react-select';
         console.log(err.message);
       }
     }
+    console.log(allPractitioners)
     return (
       <>
       <form onSubmit={onFormSubmit}>
         <HeadingMain>Make a Booking</HeadingMain>
         <HeadingMain>Select a Location</HeadingMain>
-          <Select options={locationOptions} onSelect={handleChangeLocation} />
+          <Select options={locationOptions} onChange={handleChangeLocation} />
         <HeadingMain>Select a Service</HeadingMain>
-          <Select options={serviceOptions} onSelect={handleChangeService} />
+          <Select options={serviceOptions} onChange={handleChangeService} />
         <HeadingMain>Select a Practitioner</HeadingMain>
-          <Select options={allPractitioners} onSelect={handleChangePractitioners} />
+          <Select options={allPractitioners} value={practitioner} onChange={handleChangePractitioners} />
         <HeadingMain>Select a Date</HeadingMain>
-          <Select options={dateOptions} onSelect={handleChangeDate} />
+          <Select options={dateOptions} onChange={handleChangeDate} />
         <HeadingMain>Select a Time</HeadingMain>
-          <Select options={timeOptions} onSelect={handleChangeTime} />
+          <Select options={timeOptions} onChange={handleChangeTime} />
         <HeadingMain>Cost: </HeadingMain>
           <HeadingSub>{cost}</HeadingSub>
         <input type="submit" value="Confirm" />
