@@ -1,4 +1,4 @@
-import { HeadingMain, HeadingSub } from '../styled/main';
+import { HeadingMain, HeadingSub } from '../../styled/main';
 import React, { useState, useEffect } from "react";
 import Select from 'react-select';
   
