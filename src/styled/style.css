@@ -19,3 +19,11 @@ a {
   margin: 15px;
   padding: 10px;
 }
+
+.quote-size {
+  padding: 0 15px;
+  margin: 200px auto;
+  justify-content: center;
+  background-color: rgb(191, 243, 191);
+  border: none;
+}
