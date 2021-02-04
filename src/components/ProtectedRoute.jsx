@@ -11,7 +11,7 @@ export function ProtectedRoute({ exact, path, component }) {
   useEffect(() => {
     async function checkAuthStatus() {
       try {
-        const response = await fetch("http://localhost:3000/status", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/status`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -19,8 +19,8 @@ export function ProtectedRoute({ exact, path, component }) {
         if (response.status >= 400) {
           throw new Error("not authorized");
         } else {
-          const { jwt } = await response.json();
-          localStorage.setItem("token", jwt);
+          const { user } = await response.json();
+          localStorage.setItem("user", JSON.stringify(user));
           setAuth(true);
           setLoading(false);
         }

@@ -1,7 +1,6 @@
 import '../styled/style.css';
 import React from 'react';
 import { 
-  BrowserRouter,
   Switch, 
   Route,
   Link
@@ -9,15 +8,19 @@ import {
 import { HomePage } from './Homepage';
 import { ProtectedRoute } from './ProtectedRoute';
 import { Profile } from './Profile';
-import { Bookings } from './Bookings'; 
 import { Login } from './Login';
 import { SignUp } from './SignUp';
-import { LoggedInNav } from './LoggedInNav';
-import { LoggedOutNav } from './LoggedOutNav';
 import { Availability } from './Availability';
 import { IndividualAvailability } from './IndividualAvailability';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 import { Nav } from '../styled/main';
+import { AllBookingsFunction } from './AllBookings';
+import { CreateBooking } from './CreateBooking';
+import { CurrentBooking } from './CurrentBooking';
+import { CreateAddress } from './CreateAddress';
+import { UpdateProfile } from './UpdateProfile';
+import { EditBooking } from './EditBooking';
+import { UpdateAddress } from './UpdateAddress';
 
 
 export function NavRouter() {
@@ -26,6 +29,7 @@ export function NavRouter() {
   function logout(e) {
     e.preventDefault();
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     history.push("/login")
   }
 
@@ -44,13 +48,19 @@ export function NavRouter() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/about" component={HomePage} />
-        <Route exact path="/bookings" component={Bookings} />
+        <Route exact path="/bookings" component={CreateBooking} />
         <Route exact path="/contact-us" component={HomePage} />
-        <Route exact path="/profile" component={Profile} />
+        <ProtectedRoute exact path="/profile" component={Profile} />
         <Route exact path="/login" component={Login} /> 
         <Route exact path="/sign-up" component={SignUp} />
         <Route exact path="/availabilities" component={Availability} />
         <Route exact path="/availability/:id" component={IndividualAvailability} />
+        <Route exact path="/bookings/history" component={AllBookingsFunction} />
+        <Route exact path="/bookings/current" component={CurrentBooking} />
+        <Route exact path="/create-address" component={CreateAddress} />
+        <Route exact path="/update-profile" component={UpdateProfile} />
+        <Route exact path="/booking/show/:id" component={EditBooking} />
+        <Route exact path="/update-address" component={UpdateAddress} />
       </Switch>
     </>
   );

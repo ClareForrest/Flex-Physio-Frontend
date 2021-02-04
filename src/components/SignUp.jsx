@@ -1,32 +1,33 @@
 import React, { useState } from "react";
+import { HeadingMain, HeadingSub } from '../styled/main';
 
 export function SignUp({ history }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [phonenumber, setPhonenumber] = useState("");
+  const [first_name, setFirstname] = useState("");
+  const [last_name, setLastname] = useState("");
+  const [phone_number, setPhonenumber] = useState("");
   
 
   async function onFormSubmit(event) {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/api/sign-up", {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/sign-up`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ user: { email, password } }),
+        body: JSON.stringify({ user: { first_name, last_name, email, password, phone_number } }),
       });
       if (response.status >= 400) {
         throw new Error("incorrect credentials");
       } else {
-        const response = await fetch("http://localhost:3000/api/sign-in", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/sign-in`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ auth: { email, password } }),
+          body: JSON.stringify({ auth: { first_name, last_name, email, password, phone_number } }),
         });
         const { jwt } = await response.json();
         localStorage.setItem("token", jwt);
@@ -39,27 +40,27 @@ export function SignUp({ history }) {
 
   return (
     <>
-      <h1>Sign Up</h1>
+      <HeadingMain>Sign Up</HeadingMain>
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="firstName">first name</label>
+        <label htmlFor="first_Name">First Name</label>
         <input
-          type="firstname"
-          name="firstname"
-          id="firstname"
-          value={firstname}
+          type="text"
+          name="first_name"
+          id="first_name"
+          value={first_name}
           onChange={(e) => setFirstname(e.target.value)}
         />
-        <label htmlFor="lastName">last name</label>
+        <label htmlFor="last_Name">Last Name</label>
         <input
-          type="lastname"
-          name="lastname"
-          id="lastname"
-          value={lastname}
+          type="text"
+          name="last_name"
+          id="last_name"
+          value={last_name}
           onChange={(e) => setLastname(e.target.value)}
         />
         <label htmlFor="email">Email</label>
         <input
-          type="email"
+          type="text"
           name="email"
           id="email"
           value={email}
@@ -67,11 +68,19 @@ export function SignUp({ history }) {
         />
         <label htmlFor="password">Password</label>
         <input
-          type="password"
+          type="text"
           name="password"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+        />
+        <label htmlFor="phone_number">Phone Number:</label>
+        <input
+          type="number"
+          name="phone_number"
+          id="phone_number"
+          value={phone_number}
+          onChange={(e) => setPhonenumber(e.target.value)}
         />
         <input type="submit" value="Submit" />
       </form>
