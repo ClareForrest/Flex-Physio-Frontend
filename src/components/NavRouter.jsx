@@ -20,7 +20,7 @@ import { CurrentBooking } from './CurrentBooking';
 import { CreateAddress } from './CreateAddress';
 import { UpdateProfile } from './UpdateProfile';
 import { EditBooking } from './EditBooking';
-import {UpdateAddress } from './UpdateAddress';
+import { UpdateAddress } from './UpdateAddress';
 
 
 export function NavRouter() {
