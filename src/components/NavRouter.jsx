@@ -20,6 +20,7 @@ import { CurrentBooking } from './CurrentBooking';
 import { CreateAddress } from './CreateAddress';
 import { UpdateProfile } from './UpdateProfile';
 import { EditBooking } from './EditBooking';
+import {UpdateAddress } from './UpdateAddress';
 
 
 export function NavRouter() {
@@ -59,6 +60,7 @@ export function NavRouter() {
         <Route exact path="/create-address" component={CreateAddress} />
         <Route exact path="/update-profile" component={UpdateProfile} />
         <Route exact path="/booking/show/:id" component={EditBooking} />
+        <Route exact path="/update-address" component={UpdateAddress} />
       </Switch>
     </>
   );
