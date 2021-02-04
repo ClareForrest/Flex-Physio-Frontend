@@ -4,7 +4,7 @@ import { loadStripe } from '@stripe/stripe-js';
 const stripePromise = loadStripe('pk_test_51Ho5dVFmgeBEAT7KoH3k5qPewwkvipHdsNdjJB9ekThFbMCvj25FEi5ZX7xhMjNzGmF4OSUQL2MPFoklKV3DE6TT00tbGcIBFh')
 
 
-async function StripeButton(e) {
+export function StripeButton(e) {
 
   const handleClick = async (event) => {
 
@@ -20,6 +20,7 @@ async function StripeButton(e) {
 
     const session = await response.json();
 
+    console.log(session)
     // this works like the redirect to method in rails - redirects to stripe page.
     const result = await stripe.redirectToCheckout({
       sessionId: session.id,
@@ -31,13 +32,12 @@ async function StripeButton(e) {
   }
   return (
     <>
-      <button type="button" role="link" onClick={StripeButton}>
+      <h4>You can optionally make a payment now!</h4>
+      <button type="button" id="checkout-button" role="link" onClick={StripeButton}>
         Make Payment
-  </button>
-
+      </button>
     </>
   )
-
 }
 
 
