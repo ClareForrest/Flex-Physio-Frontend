@@ -17,7 +17,7 @@ export function UpdateProfile() {
   const id = user.id
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/profile/${id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/profile/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -39,7 +39,7 @@ export function UpdateProfile() {
     e.preventDefault()
     try {
       
-      await fetch(`http://localhost:3000/api/update-profile/${id}`, {
+      await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/update-profile/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

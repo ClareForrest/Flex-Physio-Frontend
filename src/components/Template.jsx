@@ -6,11 +6,11 @@ import { NavRouter } from './NavRouter';
 
 
 export function Template(props) {
-// conditional rendering of login/logout as well as bookings and profile in nav bar
+// Would like to employ conditional rendering of login/logout as well as bookings and profile in nav bar
 // const authorisation = user_signedIn? (authorisation = "Sign Out") : (authorisation = "Log In")
 // const view = user_signedIn? (view = "") : (view = "disabled")
 
-  return(
+return(
     <Container>
       <Row>
         <Col xs={3}>
