@@ -6,11 +6,11 @@ const stripePromise = loadStripe('pk_test_51Ho5dVFmgeBEAT7KoH3k5qPewwkvipHdsNdjJ
 
 export function StripeButton(e) {
 
-  const handleClick = async (event) => {
+  const StripeButton = async (event) => {
 
     const stripe = await stripePromise;
 
-    const response = await fetch("session controller url", {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/charges/new`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +27,7 @@ export function StripeButton(e) {
     });
 
     if (result.error) {
-      console.log(err.message);
+      console.log(result.error.message)
     }
   }
   return (
@@ -37,7 +37,7 @@ export function StripeButton(e) {
         Make Payment
       </button>
     </>
-  )
+  );
 }
 
 

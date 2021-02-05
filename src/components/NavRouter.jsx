@@ -22,6 +22,8 @@ import { EditBooking } from './bookingsComponents/EditBooking';
 import { UpdateAddress } from './UpdateAddress';
 import { AboutPage } from './homepageComponents/About';
 import { ServicesPage } from './homepageComponents/Services';
+import { Success } from '../components/bookingsComponents/Success';
+import { Cancel } from '../components/bookingsComponents/Cancel';
 
 export function NavRouter() {
   const history = useHistory()
@@ -63,6 +65,8 @@ export function NavRouter() {
         <Route exact path="/sign-up" component={SignUp} />
         <ProtectedRoute exact path="/availabilities" component={Availability} />
         <ProtectedRoute exact path="/availability/:id" component={IndividualAvailability} />
+        <Route exact path="/success" component={Success} />
+        <Route exact path="/cancel" component={Cancel} />
       </Switch>
     </>
   );
