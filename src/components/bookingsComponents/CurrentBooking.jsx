@@ -39,10 +39,8 @@ export function CurrentBooking(props) {
             <p>Service: {currentBooking.name}</p>
             <p>Cost: ${currentBooking.cost}</p>
           <Link to='/' onClick={onCancelClick}>Cancel Booking</Link>
-          </Card>
-        </div>
-        <div>
           <StripeButton></StripeButton>
+          </Card>
         </div>
       </>
     )
