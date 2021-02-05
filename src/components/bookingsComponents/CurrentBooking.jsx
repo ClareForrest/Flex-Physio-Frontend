@@ -2,6 +2,7 @@ import { HeadingMain } from '../../styled/main';
 import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { StripeButton } from './StripeButton'
 
 export function CurrentBooking() {
   const [currentBooking, setCurrentBooking] = useState([]);
@@ -30,6 +31,9 @@ export function CurrentBooking() {
             <p>Cost: ${currentBooking.cost}</p>
           </Card>
           <Link to="/booking/show/:id">Edit Booking</Link>
+        </div>
+        <div>
+          <StripeButton></StripeButton>
         </div>
       </>
     )
