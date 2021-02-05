@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import { StripeButton } from './StripeButton'
 
-export function CurrentBooking() {
+export function CurrentBooking(props) {
   const [currentBooking, setCurrentBooking] = useState([]);
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/api/bookings/current`, {
@@ -17,7 +17,16 @@ export function CurrentBooking() {
   }, []);
   // shows the most recently saved booking in the array
 
-  console.log(currentBooking);
+  async function onCancelClick(e){
+    e.preventDefault()
+    await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/bookings/delete`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+    props.history.push('/bookings')
+  }
   return (
     currentBooking && (
       <>
@@ -29,8 +38,8 @@ export function CurrentBooking() {
             <p>Time: {currentBooking.time}</p>
             <p>Service: {currentBooking.name}</p>
             <p>Cost: ${currentBooking.cost}</p>
+          <Link to='/' onClick={onCancelClick}>Cancel Booking</Link>
           </Card>
-          <Link to="/booking/show/:id">Edit Booking</Link>
         </div>
         <div>
           <StripeButton></StripeButton>

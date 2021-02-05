@@ -1,144 +1,146 @@
-import { HeadingMain, HeadingSub } from '../../styled/main';
+import { HeadingMain, HeadingSub } from "../../styled/main";
 import React, { useState, useEffect } from "react";
-import Select from 'react-select';
-  
-  export function CreateBooking(){
-    // Select a location. Dropdown menu from bookings.
-    // Bookings table has location, date, time (this will need to connect to employees availability)
-    // Services is separate table with name (massage/physio) and cost 
-    // Employees table has availability
-    const locationOptions = [
-      {value: 'cbd', label: 'CBD'},
-      {value: 'suburbs', label: 'Suburbs'}
-    ]
-    const [location, setLocation] = useState(null)
+import Select from "react-select";
 
-    function handleChangeLocation(event) {
-      setLocation({id: event.target.value, value: event.label})
-    } 
+export function CreateBooking(props) {
+  const user = JSON.parse(localStorage.getItem("user"));
+  const id = user.id;
+  // Select a location. Dropdown menu from bookings.
+  const locationOptions = [
+    { value: "cbd", label: "CBD" },
+    { value: "suburbs", label: "Suburbs" },
+  ];
+  const [location, setLocation] = useState(null);
 
-    const serviceOptions = [
-      {value: 'massage', label: 'Massage'},
-      {value: 'physiotherapy', label: 'Physiotherapy'},
-    ]
-    const [service, setService] = useState(null)
+  function handleChangeLocation(selectedLocation) {
+    setLocation(selectedLocation);
+  }
 
-    function handleChangeService(event) {
-      setService({id: event.target.value, value: event.label})
-    } 
+  const serviceOptions = [
+    { value: "massage", label: "Massage" },
+    { value: "physiotherapy", label: "Physiotherapy" },
+  ];
+  const [service, setService] = useState(null);
 
-// maps through all employees and show as options in Select dropdown
-      const [allPractitioners, setAllPractitioners] = useState([]);
-      useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/employees`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          }
-        })
-        .then((response) => response.json())
-        .then((body) => {
-          console.log(body)
-          const names = body.map((employee) => {
-            return {
-              value: `${employee.first_name} ${employee.last_name}`,
-              label: `${employee.first_name} ${employee.last_name}`
-            }
-          })
-          setAllPractitioners(names)
+  function handleChangeServiceAndCost(selectedService) {
+    setService(selectedService);
+  }
+
+  // maps through all employees and show as options in Select dropdown
+  const [allPractitioners, setAllPractitioners] = useState([]);
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/employees`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((body) => {
+        const names = body.map((employee) => {
+          return {
+            value: `${employee.first_name} ${employee.last_name}`,
+            label: `${employee.first_name} ${employee.last_name}`,
+          };
         });
-      }, []);
+        setAllPractitioners(names);
+      });
+  }, []);
 
-    const [practitioner, setPractitioner] = useState(null)
-    
-    function handleChangePractitioners(selectedPractitioner) {
-      setPractitioner(selectedPractitioner)
-    } 
+  const [practitioner, setPractitioner] = useState(null);
 
-    // would like to get this displayed and selected through the calendar app
-    // pulled from employees availability
-    const dateOptions = [
-      {value: 'Monday', label: 'Monday'},
-      {value: 'Tuesday', label: 'Tuesday'},
-      {value: 'Wednesday', label: 'Wednesday'},
-      {value: 'Thursday', label: 'Thursday'},
-      {value: 'Friday', label: 'Friday'},
-    ]
-    const [date, setDate] = useState(null)
+  function handleChangePractitioners(selectedPractitioner) {
+    setPractitioner(selectedPractitioner);
+  }
 
-    function handleChangeDate (event) {
-      setDate({id: event.target.value, value: event.label})
-    } 
-    
-    const timeOptions = [
-      // will be good to get this displayed and selected through a calendar app
-      {value: '09:00', label: '09:00'},
-      {value: '10:00', label: '10:00'},
-      {value: '11:00', label: '11:00'},
-      {value: '12:00', label: '12:00'},
-      {value: '13:00', label: '13:00'},
-      {value: '14:00', label: '14:00'},
-      {value: '15:00', label: '15:00'},
-      {value: '16:00', label: '16:00'},
-    ]
-    const [time, setTime] = useState(null)
+  // would like to get this displayed and selected through the calendar app
+  // pulled from employees availability
+  const dateOptions = [
+    { value: "Monday", label: "Monday" },
+    { value: "Tuesday", label: "Tuesday" },
+    { value: "Wednesday", label: "Wednesday" },
+    { value: "Thursday", label: "Thursday" },
+    { value: "Friday", label: "Friday" },
+  ];
+  const [date, setDate] = useState(null);
 
-    function handleChangeTime(event) {
-      setTime({id: event.target.value, value: event.label})
-    } 
-    
-    const [cost, setCost] = useState(null)
-    // interpolate the service selected to then pull the cost from the cost table
-    function handleChangeTime(event) {
-      setCost(`${service}.id.event.target.value, ${service}.value: event.label`)
-    }
+  function handleChangeDate(selectedDate) {
+    setDate(selectedDate);
+  }
 
-    async function onFormSubmit(event) {
-      event.preventDefault();
-      try {
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/booking`, {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-            "Content-Type": "application/json",
+  const timeOptions = [
+    // will be good to get this displayed and selected through a calendar app
+    { value: "09:00", label: "09:00" },
+    { value: "10:00", label: "10:00" },
+    { value: "11:00", label: "11:00" },
+    { value: "12:00", label: "12:00" },
+    { value: "13:00", label: "13:00" },
+    { value: "14:00", label: "14:00" },
+    { value: "15:00", label: "15:00" },
+    { value: "16:00", label: "16:00" },
+  ];
+  const [time, setTime] = useState(null);
+
+  function handleChangeTime(selectedTime) {
+    setTime(selectedTime);
+  }
+
+  async function onFormSubmit(event) {
+    event.preventDefault();
+    try {
+      await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/bookings/new`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          booking: {
+            location: location.value,
+            service: service.value,
+            date: date.value,
+            time: time.value,
           },
-          body: JSON.stringify({ booking: { location, service, date, time } }),
-        });
-        if (response.status >= 400) {
-          throw new Error("incorrect credentials");
-        } else {
-          const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/booking`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ booking: { location, service, date, time } }),
-            // ask why practitioner and cost aren't required
-          });
-          const { jwt } = await response.json();
-          localStorage.setItem("token", jwt);
-          // want to redirect to CurrentBooking page 
-        }
-      } catch (err) {
-        console.log(err.message);
-      }
+        }),
+      });
+      props.history.push('/bookings/current')
+    } catch (err) {
+      console.log(err.message);
     }
-    console.log(allPractitioners)
-    return (
-      <>
+  }
+  return (
+    <>
       <form onSubmit={onFormSubmit}>
         <HeadingMain>Make a Booking</HeadingMain>
-        <HeadingMain>Select a Location</HeadingMain>
-          <Select options={locationOptions} onChange={handleChangeLocation} />
-        <HeadingMain>Select a Service</HeadingMain>
-          <Select options={serviceOptions} onChange={handleChangeService} />
-        <HeadingMain>Select a Practitioner</HeadingMain>
-          <Select options={allPractitioners} value={practitioner} onChange={handleChangePractitioners} />
-        <HeadingMain>Select a Date</HeadingMain>
-          <Select options={dateOptions} onChange={handleChangeDate} />
-        <HeadingMain>Select a Time</HeadingMain>
-          <Select options={timeOptions} onChange={handleChangeTime} />
-        <HeadingMain>Cost: </HeadingMain>
-          <HeadingSub>{cost}</HeadingSub>
+        <HeadingSub>Select a Location</HeadingSub>
+        <Select
+          options={locationOptions}
+          value={location}
+          onChange={handleChangeLocation}
+        />
+        <HeadingSub>Select a Service</HeadingSub>
+        <Select
+          options={serviceOptions}
+          value={service}
+          onChange={handleChangeServiceAndCost}
+        />
+        <HeadingSub>Select a Practitioner</HeadingSub>
+        <Select
+          options={allPractitioners}
+          value={practitioner}
+          onChange={handleChangePractitioners}
+        />
+        <HeadingSub>Select a Date</HeadingSub>
+        <Select
+          options={dateOptions}
+          value={date}
+          onChange={handleChangeDate}
+        />
+        <HeadingSub>Select a Time</HeadingSub>
+        <Select
+          options={timeOptions}
+          value={time}
+          onChange={handleChangeTime}
+        />
         <input type="submit" value="Confirm" />
       </form>
     </>
