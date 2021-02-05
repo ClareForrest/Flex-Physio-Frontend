@@ -7,23 +7,21 @@ export function Availability() {
       .then((response) => response.json())
       .then((body) => {
         console.log(body);
-        setEmployee(body)
+        setEmployee(body);
       });
   }, []);
 
   return (
-    <>
-      <h1>Trainer Availabilities:</h1>
-      <div>
-        {employee && employee.map((a) => {
-          return (
-            <p key={a.id}>
-              <h2>{a.availability}</h2>
-            </p>
-          );
-        })}
-      </div>
-    </>
-
+    <div>
+      <h1>Availabilities:</h1>
+      {employee.map((body) => {
+        return (
+          <div>
+            <p>{body.first_name} {body.last_name}</p>
+            <p>{body.availability}</p>
+          </div>
+        )
+      })}
+    </div>  
   )
 }
