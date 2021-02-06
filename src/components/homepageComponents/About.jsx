@@ -1,4 +1,4 @@
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Image } from 'react-bootstrap';
 import { HeadingMain, HeadingSub } from '../../styled/main';
 import massage from '../../massage.jpg';
 import physios from '../../physios.jpg';
@@ -13,7 +13,7 @@ export function AboutPage() {
       </Row>
       <Row>
         <Col>
-          <img src={physios} alt="Physiotherapists" />
+          <Image src={physios} alt="Physiotherapists" />
           <HeadingSub id="massage-therapists" name="massage-therapists">
             Our Massage Therapists
           </HeadingSub>
@@ -26,7 +26,7 @@ export function AboutPage() {
             Vulputate enim nulla aliquet porttitor lacus. Sed cras ornare arcu
             dui vivamus arcu felis.{" "}
           </p>
-          <img src={admin} alt="Administration Staff" />
+          <Image src={admin} alt="Administration Staff" />
           <HeadingMain>Services</HeadingMain>
           <HeadingSub id="massage" name="massage">
             Massage
@@ -40,7 +40,7 @@ export function AboutPage() {
             Vulputate enim nulla aliquet porttitor lacus. Sed cras ornare arcu
             dui vivamus arcu felis.
           </p>
-          <img src={physios} alt="Physiotherapy" />
+          <Image src={physios} alt="Physiotherapy" />
         </Col>
         <Col>
           <HeadingSub id="physiotherapists" name="physiotherapists">
@@ -55,7 +55,7 @@ export function AboutPage() {
             Vulputate enim nulla aliquet porttitor lacus. Sed cras ornare arcu
             dui vivamus arcu felis.
           </p>
-          <img src={massage} alt="Massage Therapists" />
+          <Image src={massage} alt="Massage Therapists" />
           <HeadingSub id="admin-staff" name="admin-staff">
             Our Administration Staff
           </HeadingSub>
@@ -68,7 +68,7 @@ export function AboutPage() {
             Vulputate enim nulla aliquet porttitor lacus. Sed cras ornare arcu
             dui vivamus arcu felis
           </p>
-          <img src={massage} alt="Massage" />
+          <Image src={massage} alt="Massage" />
           <HeadingSub id="physiotherapy" name="physiotherapy">
             Physiotherapy
           </HeadingSub>
