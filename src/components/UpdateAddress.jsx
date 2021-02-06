@@ -14,13 +14,14 @@ export function UpdateAddress() {
   const id = user.id;
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/addresses/${id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/addresses/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((res) => res.json())
       .then((address) => {
+        console.log(address) 
         setStreet(address.street);
         setSuburb(address.suburb);
         setState(address.state);
@@ -31,7 +32,7 @@ export function UpdateAddress() {
   async function onUpdateSubmit(e) {
     e.preventDefault();
     try {
-      await fetch(`http://localhost:3000/api/update-address/${id}`, {
+      await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/update-address/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

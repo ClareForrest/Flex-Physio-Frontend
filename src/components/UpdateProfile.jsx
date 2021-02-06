@@ -17,7 +17,7 @@ export function UpdateProfile() {
   const id = user.id;
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/update-profile/${id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/profile/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -118,7 +118,9 @@ export function UpdateProfile() {
               id="submit"
               type="submit"
               value="Submit"
-            />
+            >
+              Update
+            </Button>
           </form>
         </Card>
       </Row>

@@ -1,5 +1,5 @@
 import { HeadingMain } from "../styled/main";
-// import Modal from "react-bootstrap/Modal";
+import Modal from "react-bootstrap/Modal";
 import { Card, Button } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import React, { useState, useEffect } from "react";
@@ -10,7 +10,7 @@ export function GetProfile(props) {
   const user = JSON.parse(localStorage.getItem("user"));
   const id = user.id;
 
-  // check where and how this is pulling through. currently returning undefined.
+
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/api/addresses/${id}`)
       .then((res) => res.json())
@@ -51,31 +51,7 @@ export function GetProfile(props) {
   );
 }
 
-// Don't think we need the below if we are redirecting and rendering the UpdateProfile component.
-// Ultimately, I would like to use
 
-// function MyVerticallyCenteredModal(props) {
-//   return (
-//     <Modal
-//       {...props}
-//       size="lg"
-//       aria-labelledby="contained-modal-title-vcenter"
-//       centered
-//     >
-//       <Modal.Header closeButton>
-//         <Modal.Title id="contained-modal-title-vcenter">
-//           Your contact/address details (change this with state)
-//         </Modal.Title>
-//       </Modal.Header>
-//       <Modal.Body>
-//         <p>Need the edit form to show up here (again, change with state)</p>
-//       </Modal.Body>
-//       <Modal.Footer>
-//         <Button onClick={props.onHide}>Close</Button>
-//       </Modal.Footer>
-//     </Modal>
-//   );
-// }
 
 // export function Profile() {
 //   const [modalShow, setModalShow] = useState(false);
@@ -89,24 +65,24 @@ export function GetProfile(props) {
 //       <h6>Last Name: {user.last_name}</h6>
 //       <h6>Current Email: {user.email}</h6>
 //       <h6>Current contact number: {user.phone_number}</h6>
-//       <Button variant="secondary" onClick={() => setModalShow(true)}>
+//       {/* <Button variant="secondary" onClick={() => setModalShow(true)}>
 //         Edit
 //       </Button>
 //       <MyVerticallyCenteredModal
 //         show={modalShow}
 //         onHide={() => setModalShow(false)}
-//       />
+//       /> */}
 //       <Row>
 //         <HeadingMain>Your Address Details:</HeadingMain>
 //         <GetProfile></GetProfile>
 //       </Row>
-//       <Button variant="secondary" onClick={() => setModalShow(true)}>
+//       {/* <Button variant="secondary" onClick={() => setModalShow(true)}>
 //         Edit
 //       </Button>
 //       <MyVerticallyCenteredModal
 //         show={modalShow}
 //         onHide={() => setModalShow(false)}
-//       />
+//       /> */}
 //     </>
 //   );
 // }

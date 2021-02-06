@@ -42,7 +42,8 @@ export function SignUp({ history }) {
         );
         const { jwt } = await response.json();
         localStorage.setItem("token", jwt);
-        history.push("/subscriptions");
+        localStorage.setItem("user", JSON.stringify({ first_name: first_name, last_name: last_name, email: email, password: password, phone_number: phone_number}));
+        history.push("/");
       }
     } catch (err) {
       console.log(err.message);

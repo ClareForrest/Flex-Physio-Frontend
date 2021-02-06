@@ -110,6 +110,8 @@ export function CreateBooking(props) {
   }
   return (
     <>
+    <Row>
+      <Card>
       <form onSubmit={onFormSubmit} className="alignment">
         <HeadingMain>Make a Booking</HeadingMain>
         <HeadingSub>Select a Location</HeadingSub>
@@ -146,6 +148,8 @@ export function CreateBooking(props) {
           Confirm
         </Button>
       </form>
+      </Card>
+    </Row>
     </>
   );
 }
