@@ -1,35 +1,37 @@
 
-import '../styled/style.css';import React from 'react';
-import { 
-  Switch, 
-  Route,
-  Link
-} from 'react-router-dom';
-import { HomePage } from './homepageComponents/Homepage';
-import { ProtectedRoute } from './ProtectedRoute';
-import { Profile } from './Profile';
-import { Login } from './Login';
-import { SignUp } from './SignUp';
-import { Availability } from './Availability';
-import { IndividualAvailability } from './IndividualAvailability';
+// import '../styled/style.css';import React from 'react';
+// import { 
+//   Switch, 
+//   Route,
+//   Link
+// } from 'react-router-dom';
+// import { HomePage } from './homepageComponents/Homepage';
+// import { ProtectedRoute } from './ProtectedRoute';
+// import { Profile } from './Profile';
+// import { Login } from './Login';
+// import { SignUp } from './SignUp';
+// import { Availability } from './Availability';
+// import { IndividualAvailability } from './IndividualAvailability';
+
+// import { useHistory } from 'react-router-dom';
+// import { Nav } from '../styled/main';
+// import { AllBookingsFunction } from './bookingsComponents/AllBookings';
+// import { CreateBooking } from './bookingsComponents/CreateBooking';
+// import { CurrentBooking } from './bookingsComponents/CurrentBooking';
+// import { CreateAddress } from './CreateAddress';
+// import { UpdateProfile } from './UpdateProfile';
+// import { EditBooking } from './bookingsComponents/EditBooking';
+// import { UpdateAddress } from './UpdateAddress';
+// import { AboutPage } from './homepageComponents/About';
+// import { ServicesPage } from './homepageComponents/Services';
+// import { Success } from '../components/bookingsComponents/Success';
+// import { Cancel } from '../components/bookingsComponents/Cancel';
+
+
+
+
 import { UpdateEmployee } from './UpdateEmployee';
-import { useHistory } from 'react-router-dom';
-import { Nav } from '../styled/main';
-import { AllBookingsFunction } from './bookingsComponents/AllBookings';
-import { CreateBooking } from './bookingsComponents/CreateBooking';
-import { CurrentBooking } from './bookingsComponents/CurrentBooking';
-import { CreateAddress } from './CreateAddress';
-import { UpdateProfile } from './UpdateProfile';
-import { EditBooking } from './bookingsComponents/EditBooking';
-import { UpdateAddress } from './UpdateAddress';
-import { AboutPage } from './homepageComponents/About';
-import { ServicesPage } from './homepageComponents/Services';
-import { Success } from '../components/bookingsComponents/Success';
-import { Cancel } from '../components/bookingsComponents/Cancel';
-
-
 import "../styled/style.css";
-import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import { HomePage } from "./homepageComponents/Homepage";
 import { ProtectedRoute } from "./ProtectedRoute";

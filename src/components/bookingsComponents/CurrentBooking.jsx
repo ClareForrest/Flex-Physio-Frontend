@@ -1,5 +1,5 @@
 import { HeadingMain } from "../../styled/main";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Link } from "react";
 import { Button, Card } from "react-bootstrap";
 import { StripeButton } from "./StripeButton";
 
