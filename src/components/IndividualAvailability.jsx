@@ -1,5 +1,6 @@
-import React, { useState, useEffect }  from 'react';
-import { HeadingMain } from '../styled/main';
+import React, { useState, useEffect } from "react";
+import { HeadingMain } from "../styled/main";
+import { Row, Card } from "react-bootstrap";
 
 export function IndividualAvailability(props) {
   const [employee, setEmployee] = useState(null);
@@ -9,22 +10,24 @@ export function IndividualAvailability(props) {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/api/availability/${id}`)
       .then((res) => res.json())
       .then((employee) => {
-        console.log(id)
-        console.log(employee)
+        console.log(id);
+        console.log(employee);
         setEmployee(employee);
-  
       });
-  }, [id])
+  }, [id]);
 
   return (
     employee && (
       <>
-        <div>
-          <HeadingMain>Your Current Availabilities:</HeadingMain>
-          <p>{employee.availability}</p>
-        </div>
-        
+        <Row>
+          <HeadingMain>Your Current Availabilities</HeadingMain>
+        </Row>
+        <Row>
+          <Card className="login-card-size">
+            <p>{employee.availability}</p>
+          </Card>
+        </Row>
       </>
     )
-  )
+  );
 }

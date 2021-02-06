@@ -1,10 +1,11 @@
 import { HeadingMain, HeadingSub } from "../../styled/main";
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
+import { Row, Card, Button } from "react-bootstrap";
 
 export function CreateBooking(props) {
   const user = JSON.parse(localStorage.getItem("user"));
-  const id = user.id;
+  // const id = user.id;
   // Select a location. Dropdown menu from bookings.
   const locationOptions = [
     { value: "cbd", label: "CBD" },
@@ -102,14 +103,14 @@ export function CreateBooking(props) {
           },
         }),
       });
-      props.history.push('/bookings/current')
+      props.history.push("/bookings/current");
     } catch (err) {
       console.log(err.message);
     }
   }
   return (
     <>
-      <form onSubmit={onFormSubmit}>
+      <form onSubmit={onFormSubmit} className="alignment">
         <HeadingMain>Make a Booking</HeadingMain>
         <HeadingSub>Select a Location</HeadingSub>
         <Select
@@ -141,7 +142,9 @@ export function CreateBooking(props) {
           value={time}
           onChange={handleChangeTime}
         />
-        <input type="submit" value="Confirm" />
+        <Button variant="secondary" type="submit" value="Confirm">
+          Confirm
+        </Button>
       </form>
     </>
   );
