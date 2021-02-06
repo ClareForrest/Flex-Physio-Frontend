@@ -37,25 +37,14 @@ export function CurrentBooking(props) {
             <p>Time: {currentBooking.time}</p>
             <p>Service: {currentBooking.name}</p>
             <p>Cost: ${currentBooking.cost}</p>
-<<<<<<< HEAD
-<<<<<<< HEAD
           <Link to='/' onClick={onCancelClick}>Cancel Booking</Link>
-          <StripeButton></StripeButton>
-          </Card>
-=======
-=======
->>>>>>> 83ab8faf7544d5ba1225bb7ed0e818af5bcc00a6
             <Button variant="secondary" onClick={onCancelClick}>
-              Cancel Booking
+            Cancel Booking
             </Button>
           </Card>
         </div>
         <div>
           <StripeButton />
-<<<<<<< HEAD
->>>>>>> 83d9d151dacd2f310a16fb44f3d325f80315f6b0
-=======
->>>>>>> 83ab8faf7544d5ba1225bb7ed0e818af5bcc00a6
         </div>
       </>
     )
