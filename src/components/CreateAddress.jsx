@@ -77,7 +77,9 @@ export function CreateAddress({ history }) {
                 value={postcode}
                 onChange={(e) => setPostcode(e.target.value)}
               />
-              <Button type="submit" value="Submit" variant="secondary" />
+              <Button type="submit" value="Submit" variant="secondary">
+                Submit
+              </Button>
             </div>
           </form>
         </Card>

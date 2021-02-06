@@ -3,7 +3,7 @@ import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import { HomePage } from "./homepageComponents/Homepage";
 import { ProtectedRoute } from "./ProtectedRoute";
-import { Profile } from "./Profile";
+import { GetProfile } from "./Profile";
 import { Login } from "./Login";
 import { SignUp } from "./SignUp";
 import { Availability } from "./Availability";
@@ -126,8 +126,8 @@ export function NavRouter() {
           component={AllBookingsFunction}
         />
         <Route exact path="/contact-us" component={HomePage} />
-        <ProtectedRoute exact path="/profile" component={Profile} />
-        <ProtectedRoute
+        <Route exact path="/profile" component={GetProfile} />
+        <Route
           exact
           path="/update-profile"
           component={UpdateProfile}

@@ -1,7 +1,6 @@
 import { HeadingMain } from "../../styled/main";
 import React, { useState, useEffect } from "react";
-import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
+import { Button, Card } from "react-bootstrap";
 import { StripeButton } from "./StripeButton";
 
 export function CurrentBooking(props) {

@@ -41,6 +41,7 @@ export function StripeButton(e) {
         type="button"
         id="checkout-button"
         role="link"
+        variant="secondary"
         onClick={StripeButton}
       >
         Make Payment
