@@ -118,7 +118,9 @@ export function UpdateProfile() {
               id="submit"
               type="submit"
               value="Submit"
-            />
+            >
+              Update
+            </Button>
           </form>
         </Card>
       </Row>
