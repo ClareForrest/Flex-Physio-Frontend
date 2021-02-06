@@ -13,6 +13,7 @@ export function LoggedInNav() {
         <Link to="/profile">Profile</Link>
         <Link to="/contact-us">Contact Us</Link>
         <Link to="/login">Sign Out</Link>
+        <Link to="/availability">Add to your availabilties</Link>
       </Nav>
     </BrowserRouter>
   );

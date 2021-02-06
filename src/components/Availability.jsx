@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { HeadingMain, HeadingSub } from "../styled/main";
-import { Row, Card } from "react-bootstrap";
+
 
 export function Availability() {
   const [employee, setEmployee] = useState([]);
@@ -14,22 +13,16 @@ export function Availability() {
   }, []);
 
   return (
-    <>
-      <Row>
-        <HeadingMain>Trainer Availabilities</HeadingMain>
-      </Row>
-      <Row>
-        <Card>
-          {employee &&
-            employee.map((a) => {
-              return (
-                <p key={a.id}>
-                  <HeadingSub>{a.availability}</HeadingSub>
-                </p>
-              );
-            })}
-        </Card>
-      </Row>
-    </>
-  );
+    <div>
+      <h1>Availabilities:</h1>
+      {employee.map((body) => {
+        return (
+          <div>
+            <p>{body.first_name} {body.last_name}</p>
+            <p>{body.availability}</p>
+          </div>
+        )
+      })}
+    </div>  
+  )
 }
