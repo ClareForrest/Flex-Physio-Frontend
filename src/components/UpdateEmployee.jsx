@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { HeadingMain } from '../styled/main';
+import { Row, Card, Button } from "react-bootstrap";
 
 export function UpdateEmployee() {
   
@@ -46,20 +48,29 @@ export function UpdateEmployee() {
 
   return (
     <>
-      <h1>Edit Profile:</h1>
-      <form onSubmit={onEditSubmit}>
-        <div>
-          <label htmlFor="availability">Availability:</label>
-          <input
-            type="text"
-            name="availability"
-            id="availability"
-            value={availability}
-            onChange={(e) => setAvailability(e.target.value)}
-          />
-        </div>
-        <input id="submit" type="submit" value="submit" />
-      </form>
+    <Row>
+      <HeadingMain>Edit Profile</HeadingMain>
+    </Row>
+    <Row>
+      <Card className="login-card-size">
+        <form onSubmit={onEditSubmit}>
+          <div>
+            <label htmlFor="availability">Availability</label>
+            <input
+              className="alignment"
+              type="text"
+              name="availability"
+              id="availability"
+              value={availability}
+              onChange={(e) => setAvailability(e.target.value)}
+            />
+          </div>
+          <Button variant="secondary" id="submit" type="submit" value="submit">
+            Confirm
+          </Button>
+        </form>
+      </Card>
+    </Row>
     </>
 )
 }
