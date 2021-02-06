@@ -3,6 +3,10 @@ a {
  color: white; 
 }
 
+#sign-up-link {
+  color: black; 
+}
+
 .dropdown-links {
   text-decoration: none;
   color: black; 
@@ -11,8 +15,18 @@ a {
 .set-size {
   height: 210px;
   width: 100%;
+  text-align: justify;
 }
 
+.login-card-size {
+  margin: 200px;
+  /* height: 210px; */
+  width: 80%;
+  padding: 20px;
+  flex-direction: flex-wrap;
+  justify-content: space-between;
+  align-items: center;
+}
 .booking-cards {
   height: 1500px;
   width: 100%;
@@ -26,4 +40,16 @@ a {
   justify-content: center;
   background-color: rgb(191, 243, 191);
   border: none;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 45px;
+  background-color: black;
+}
+
+.alignment {
+  flex-direction: flex-wrap;
+  height: auto;
+  width: 100%
 }
