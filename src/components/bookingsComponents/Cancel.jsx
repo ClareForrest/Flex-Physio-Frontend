@@ -1,5 +1,5 @@
+import { HeadingSub } from "../../styled/main";
+
 export function Cancel() {
-  return (
-    <h1>Payment failure! Please try again!</h1>
-  )
+  return <HeadingSub>Payment failure! Please try again</HeadingSub>;
 }
