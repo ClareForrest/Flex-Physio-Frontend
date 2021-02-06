@@ -1,8 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { SidePanel } from '../styled/main';
+import { SidePanel, Footer } from '../styled/main';
 import { Container, Row, Col, Card, Image } from 'react-bootstrap';
 import logo from '../logo.png';
 import { NavRouter } from './NavRouter';
+import { Link } from 'react-router-dom';
 
 
 export function Template(props) {
@@ -29,6 +30,11 @@ return(
           {props.children}
         </NavRouter>
         </Col>
+        <Footer>
+          <Link to="/availability/:id">
+            Staff
+          </Link>
+        </Footer>
       </Row>
     </Container>
   )
