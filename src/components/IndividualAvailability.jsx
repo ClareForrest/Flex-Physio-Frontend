@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { HeadingMain } from "../styled/main";
-import { Row, Card } from "react-bootstrap";
+import { Row, Card, Button } from "react-bootstrap";
 
 export function IndividualAvailability(props) {
   const [employee, setEmployee] = useState(null);
@@ -25,6 +25,9 @@ export function IndividualAvailability(props) {
         <Row>
           <Card className="login-card-size">
             <p>{employee.availability}</p>
+            <Button variant="secondary" type="button" href="/update-availability" >
+              Edit
+            </Button>
           </Card>
         </Row>
       </>

@@ -1,39 +1,9 @@
-
-import '../styled/style.css';import React from 'react';
-import { 
-  Switch, 
-  Route,
-  Link
-} from 'react-router-dom';
-import { HomePage } from './homepageComponents/Homepage';
-import { ProtectedRoute } from './ProtectedRoute';
-import { Profile } from './Profile';
-import { Login } from './Login';
-import { SignUp } from './SignUp';
-import { Availability } from './Availability';
-import { IndividualAvailability } from './IndividualAvailability';
-import { UpdateEmployee } from './UpdateEmployee';
-import { useHistory } from 'react-router-dom';
-import { Nav } from '../styled/main';
-import { AllBookingsFunction } from './bookingsComponents/AllBookings';
-import { CreateBooking } from './bookingsComponents/CreateBooking';
-import { CurrentBooking } from './bookingsComponents/CurrentBooking';
-import { CreateAddress } from './CreateAddress';
-import { UpdateProfile } from './UpdateProfile';
-import { EditBooking } from './bookingsComponents/EditBooking';
-import { UpdateAddress } from './UpdateAddress';
-import { AboutPage } from './homepageComponents/About';
-import { ServicesPage } from './homepageComponents/Services';
-import { Success } from '../components/bookingsComponents/Success';
-import { Cancel } from '../components/bookingsComponents/Cancel';
-
-
 import "../styled/style.css";
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import { HomePage } from "./homepageComponents/Homepage";
 import { ProtectedRoute } from "./ProtectedRoute";
-import { GetProfile } from "./Profile";
+import { Profile } from "./Profile";
 import { Login } from "./Login";
 import { SignUp } from "./SignUp";
 import { Availability } from "./Availability";
@@ -50,8 +20,9 @@ import { AboutPage } from "./homepageComponents/About";
 import { ServicesPage } from "./homepageComponents/Services";
 import { Success } from "../components/bookingsComponents/Success";
 import { Cancel } from "../components/bookingsComponents/Cancel";
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { UpdateEmployee } from './UpdateEmployee';
 
 
 export function NavRouter() {
@@ -107,22 +78,27 @@ export function NavRouter() {
           </Nav.Link>
         </Nav.Item>
         <NavDropdown title="Profile" id="nav-dropdown">
-          <NavDropdown.Item eventKey="5.1">
+        <NavDropdown.Item eventKey="5.1">
+            <Link class="dropdown-links" to="/profile">
+              View Profile
+            </Link>
+          </NavDropdown.Item>
+          <NavDropdown.Item eventKey="5.2">
             <Link class="dropdown-links" to="/update-profile">
               Update Profile
             </Link>
           </NavDropdown.Item>
-          <NavDropdown.Item eventKey="5.2">
+          <NavDropdown.Item eventKey="5.3">
             <Link class="dropdown-links" to="/create-address">
               Create Address
             </Link>
           </NavDropdown.Item>
-          <NavDropdown.Item eventKey="5.3">
+          <NavDropdown.Item eventKey="5.4">
             <Link class="dropdown-links" to="/update-address">
               Update Address
             </Link>
           </NavDropdown.Item>
-          <NavDropdown.Item eventKey="5.4">
+          <NavDropdown.Item eventKey="5.5">
             <Link class="dropdown-links" to="/" onClick={logout}>
               Logout
             </Link>
@@ -156,7 +132,7 @@ export function NavRouter() {
           component={AllBookingsFunction}
         />
         <Route exact path="/contact-us" component={HomePage} />
-        <Route exact path="/profile" component={GetProfile} />
+        <Route exact path="/profile" component={Profile} />
         <Route
           exact
           path="/update-profile"
@@ -179,6 +155,7 @@ export function NavRouter() {
         <ProtectedRoute exact path="/update-availability" component={UpdateEmployee} />
         <Route exact path="/success" component={Success} />
         <Route exact path="/cancel" component={Cancel} />
+        <Route exact path="/addresses/:id" />
       </Switch>
     </>
   );

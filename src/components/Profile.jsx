@@ -1,5 +1,5 @@
 import { HeadingMain } from "../styled/main";
-// import Modal from "react-bootstrap/Modal";
+import Modal from "react-bootstrap/Modal";
 import { Card, Button } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import React, { useState, useEffect } from "react";
@@ -77,36 +77,36 @@ export function GetProfile(props) {
 //   );
 // }
 
-// export function Profile() {
-//   const [modalShow, setModalShow] = useState(false);
-//   const user = JSON.parse(localStorage.getItem("user"));
-//   return (
-//     <>
-//       <Row>
-//         <HeadingMain>Your Contact Details:</HeadingMain>
-//       </Row>
-//       <h6>First Name: {user.first_name}</h6>
-//       <h6>Last Name: {user.last_name}</h6>
-//       <h6>Current Email: {user.email}</h6>
-//       <h6>Current contact number: {user.phone_number}</h6>
-//       <Button variant="secondary" onClick={() => setModalShow(true)}>
-//         Edit
-//       </Button>
-//       <MyVerticallyCenteredModal
-//         show={modalShow}
-//         onHide={() => setModalShow(false)}
-//       />
-//       <Row>
-//         <HeadingMain>Your Address Details:</HeadingMain>
-//         <GetProfile></GetProfile>
-//       </Row>
-//       <Button variant="secondary" onClick={() => setModalShow(true)}>
-//         Edit
-//       </Button>
-//       <MyVerticallyCenteredModal
-//         show={modalShow}
-//         onHide={() => setModalShow(false)}
-//       />
-//     </>
-//   );
-// }
+export function Profile() {
+  const [modalShow, setModalShow] = useState(false);
+  const user = JSON.parse(localStorage.getItem("user"));
+  return (
+    <>
+      <Row>
+        <HeadingMain>Your Contact Details:</HeadingMain>
+      </Row>
+      <h6>First Name: {user.first_name}</h6>
+      <h6>Last Name: {user.last_name}</h6>
+      <h6>Current Email: {user.email}</h6>
+      <h6>Current contact number: {user.phone_number}</h6>
+      {/* <Button variant="secondary" onClick={() => setModalShow(true)}>
+        Edit
+      </Button>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      /> */}
+      <Row>
+        <HeadingMain>Your Address Details:</HeadingMain>
+        <GetProfile></GetProfile>
+      </Row>
+      {/* <Button variant="secondary" onClick={() => setModalShow(true)}>
+        Edit
+      </Button>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      /> */}
+    </>
+  );
+}
