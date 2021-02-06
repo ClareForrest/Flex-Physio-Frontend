@@ -9,7 +9,6 @@ import { SignUp } from "./SignUp";
 import { Availability } from "./Availability";
 import { IndividualAvailability } from "./IndividualAvailability";
 import { useHistory } from "react-router-dom";
-// import { Nav } from "../styled/main";
 import { AllBookingsFunction } from "./bookingsComponents/AllBookings";
 import { CreateBooking } from "./bookingsComponents/CreateBooking";
 import { CurrentBooking } from "./bookingsComponents/CurrentBooking";

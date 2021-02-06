@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { HeadingMain } from '../styled/main';
+import { HeadingMain } from "../styled/main";
+import { Row, Card, Button } from "react-bootstrap";
 
-export function CreateAddress( { history } ) {
+export function CreateAddress({ history }) {
   const [street, setStreet] = useState("");
   const [suburb, setSuburb] = useState("");
   const [state, setState] = useState("");
   const [postcode, setPostcode] = useState("");
-
 
   async function onFormSubmit(e) {
     try {
@@ -15,64 +15,73 @@ export function CreateAddress( { history } ) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-        body: JSON.stringify({ address: { 
-          street, 
-          suburb, 
-          state, 
-          postcode 
-        },
-      }),
-    });
-    history.push("/profile");
-  } catch (err) {
-    console.log(err.message);
+        body: JSON.stringify({
+          address: {
+            street,
+            suburb,
+            state,
+            postcode,
+          },
+        }),
+      });
+      history.push("/profile");
+    } catch (err) {
+      console.log(err.message);
     }
   }
 
   return (
     <>
-      <HeadingMain>Add your Address details:</HeadingMain>
-      <form onSubmit={onFormSubmit}>
-        <div>
-          <label htmlFor="street">Street:</label>
-          <input
-          type="text"
-          name="street"
-          id="street"
-          value={street}
-          onChange={(e) => setStreet(e.target.value)}
-          />
-          <label htmlFor="suburb">Suburb:</label>
-          <input
-          type="text"
-          name="suburb"
-          id="suburb"
-          value={suburb}
-          onChange={(e) => setSuburb(e.target.value)}
-          />
-          <label htmlFor="state">State:</label>
-          <input
-          type="text"
-          name="state"
-          id="state"
-          value={state}
-          onChange={(e) => setState(e.target.value)}
-          />
-          <label htmlFor="postcode">Postcode:</label>
-          <input
-          type="number"
-          name="postcode"
-          id="postcode"
-          value={postcode}
-          onChange={(e) => setPostcode(e.target.value)}
-          />
-          <input type="submit" value="submit" value="submit" />
-        </div>
-      </form>
+      <Row>
+        <HeadingMain>Add your Address Details</HeadingMain>
+      </Row>
+      <Row>
+        <Card>
+          <form onSubmit={onFormSubmit} className="alignment">
+            <div>
+              <label htmlFor="street">Street</label>
+              <input
+                className="alignment"
+                type="text"
+                name="street"
+                id="street"
+                value={street}
+                onChange={(e) => setStreet(e.target.value)}
+              />
+              <label htmlFor="suburb">Suburb</label>
+              <input
+                className="alignment"
+                type="text"
+                name="suburb"
+                id="suburb"
+                value={suburb}
+                onChange={(e) => setSuburb(e.target.value)}
+              />
+              <label htmlFor="state">State</label>
+              <input
+                className="alignment"
+                type="text"
+                name="state"
+                id="state"
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+              />
+              <label htmlFor="postcode">Postcode</label>
+              <input
+                className="alignment"
+                type="number"
+                name="postcode"
+                id="postcode"
+                value={postcode}
+                onChange={(e) => setPostcode(e.target.value)}
+              />
+              <Button type="submit" value="Submit" variant="secondary" />
+            </div>
+          </form>
+        </Card>
+      </Row>
     </>
-  )
+  );
 }
-
-

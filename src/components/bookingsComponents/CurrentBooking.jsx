@@ -1,8 +1,8 @@
-import { HeadingMain } from '../../styled/main';
+import { HeadingMain } from "../../styled/main";
 import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import { StripeButton } from './StripeButton'
+import { StripeButton } from "./StripeButton";
 
 export function CurrentBooking(props) {
   const [currentBooking, setCurrentBooking] = useState([]);
@@ -17,15 +17,15 @@ export function CurrentBooking(props) {
   }, []);
   // shows the most recently saved booking in the array
 
-  async function onCancelClick(e){
-    e.preventDefault()
+  async function onCancelClick(e) {
+    e.preventDefault();
     await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/bookings/delete`, {
-      method: 'DELETE',
+      method: "DELETE",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
-    })
-    props.history.push('/bookings')
+    });
+    props.history.push("/bookings");
   }
   return (
     currentBooking && (
@@ -38,11 +38,13 @@ export function CurrentBooking(props) {
             <p>Time: {currentBooking.time}</p>
             <p>Service: {currentBooking.name}</p>
             <p>Cost: ${currentBooking.cost}</p>
-          <Link to='/' onClick={onCancelClick}>Cancel Booking</Link>
+            <Button variant="secondary" onClick={onCancelClick}>
+              Cancel Booking
+            </Button>
           </Card>
         </div>
         <div>
-          <StripeButton></StripeButton>
+          <StripeButton />
         </div>
       </>
     )

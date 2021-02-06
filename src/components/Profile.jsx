@@ -1,6 +1,6 @@
 import { HeadingMain } from "../styled/main";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
+import { Card, Button } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import React, { useState, useEffect } from "react";
 
@@ -9,29 +9,37 @@ function GetProfile(props) {
   const user = JSON.parse(localStorage.getItem("user"));
   const id = user.id;
 
-
   // check where and how this is pulling through. currently returnign undefined.
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/api/addresses/${id}`)
       .then((res) => res.json())
       .then((address) => {
-        console.log(id);
-        console.log(user.address);
         setAddress(address);
       });
   }, [id]);
   return (
     address && (
       <>
-        <div>
-          <HeadingMain>Your Current Address:</HeadingMain>
-          <ul>
-            <li>{address.street}</li>
-            <li>{address.suburb}</li>
-            <li>{address.state}</li>
-            <li>{address.postcode}</li>
-          </ul>
-        </div>
+        <Row>
+          <HeadingMain>Your Current Address</HeadingMain>
+        </Row>
+        <Row>
+          <Card className="login-card-size">
+            <ul>
+              <li>{address.street}</li>
+              <li>{address.suburb}</li>
+              <li>{address.state}</li>
+              <li>{address.postcode}</li>
+            </ul>
+            <Button
+              variant="secondary"
+              type="button"
+              onClick={MyVerticallyCenteredModal}
+            >
+              Edit
+            </Button>
+          </Card>
+        </Row>
       </>
     )
   );

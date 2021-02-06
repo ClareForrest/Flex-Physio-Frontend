@@ -69,9 +69,7 @@ export function Login({ history }) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button type="submit" value="Submit" variant="secondary">
-              Login
-            </Button>
+            <Button type="submit" value="Login" variant="secondary" />
           </form>
         </Card>
       </Row>
