@@ -17,7 +17,7 @@ export function UpdateProfile() {
   const id = user.id
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/profile/${id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/update-profile/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

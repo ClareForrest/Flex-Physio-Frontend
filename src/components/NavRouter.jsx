@@ -11,6 +11,7 @@ import { Login } from './Login';
 import { SignUp } from './SignUp';
 import { Availability } from './Availability';
 import { IndividualAvailability } from './IndividualAvailability';
+import { UpdateEmployee } from './UpdateEmployee';
 import { useHistory } from 'react-router-dom';
 import { Nav } from '../styled/main';
 import { AllBookingsFunction } from './bookingsComponents/AllBookings';
@@ -65,6 +66,7 @@ export function NavRouter() {
         <Route exact path="/sign-up" component={SignUp} />
         <ProtectedRoute exact path="/availabilities" component={Availability} />
         <ProtectedRoute exact path="/availability/:id" component={IndividualAvailability} />
+        <ProtectedRoute exact path="/update-availability" component={UpdateEmployee} />
         <Route exact path="/success" component={Success} />
         <Route exact path="/cancel" component={Cancel} />
       </Switch>
