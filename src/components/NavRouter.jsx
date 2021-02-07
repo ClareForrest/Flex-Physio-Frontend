@@ -132,7 +132,7 @@ export function NavRouter() {
         />
         <Route exact path="/contact-us" component={HomePage} />
         <ProtectedRoute exact path="/profile" component={GetProfile} />
-        <Route
+        <ProtectedRoute
           exact
           path="/update-profile"
           component={UpdateProfile}
