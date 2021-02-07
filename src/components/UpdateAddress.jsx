@@ -97,7 +97,14 @@ export function UpdateAddress() {
               value={postcode}
               onChange={(e) => setPostcode(e.target.value)}
             />
-            <Button variant="secondary" type="submit" value="Submit" />
+            <Button
+              variant="secondary"
+              id="submit"
+              type="submit"
+              value="Submit"
+            >
+              Update
+            </Button>
           </form>
         </Card>
       </Row>
