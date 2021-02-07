@@ -47,7 +47,7 @@ export function UpdateAddress() {
           },
         }),
       });
-      history.push("/update-address");
+      history.push("/");
     } catch (err) {
       console.log(err.message);
     }

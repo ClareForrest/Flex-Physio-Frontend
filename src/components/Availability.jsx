@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import { Card } from "react-bootstrap";;
+
 
 export function Availability() {
   const [employee, setEmployee] = useState([]);
@@ -17,10 +19,10 @@ export function Availability() {
       <h1>Availabilities:</h1>
       {employee.map((body) => {
         return (
-          <div>
+          <Card className="availability-cards">
             <p>{body.first_name} {body.last_name}</p>
             <p>{body.availability}</p>
-          </div>
+          </Card>
         )
       })}
     </div>  

@@ -83,21 +83,11 @@ export function NavRouter() {
             </Link>
           </NavDropdown.Item>
           <NavDropdown.Item eventKey="5.2">
-            <Link class="dropdown-links" to="/update-profile">
-              Update Profile
-            </Link>
-          </NavDropdown.Item>
-          <NavDropdown.Item eventKey="5.3">
             <Link class="dropdown-links" to="/create-address">
               Create Address
             </Link>
           </NavDropdown.Item>
-          <NavDropdown.Item eventKey="5.4">
-            <Link class="dropdown-links" to="/update-address">
-              Update Address
-            </Link>
-          </NavDropdown.Item>
-          <NavDropdown.Item eventKey="5.5">
+          <NavDropdown.Item eventKey="5.3">
             <Link class="dropdown-links" to="/" onClick={logout}>
               Logout
             </Link>

@@ -1,6 +1,6 @@
 a {
  text-decoration: none;
- color: white; 
+ color: lightgreen; 
 }
 
 #sign-up-link {
@@ -32,6 +32,10 @@ a {
   width: 100%;
   margin: 15px;
   padding: 10px;
+}
+
+.availability-cards {
+  margin-bottom: 10px;
 }
 
 .quote-size {
