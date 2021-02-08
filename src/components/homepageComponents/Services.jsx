@@ -4,7 +4,7 @@ import physios from "../../physios.jpg";
 import massage from "../../massage.jpg";
 import "../../styled/style.css";
 
-export function ServicesPage() {
+export const ServicesPage = () => {
   return (
     <div>
       <Row>
@@ -30,9 +30,9 @@ export function ServicesPage() {
       <Row>
         <Image src={physios} alt="Physiotherapy" />
         <Col>
-        <HeadingSub id="physiotherapy" name="physiotherapy">
-          Physiotherapy
-        </HeadingSub>
+          <HeadingSub id="physiotherapy" name="physiotherapy">
+            Physiotherapy
+          </HeadingSub>
           <p class="set-size">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
@@ -50,9 +50,9 @@ export function ServicesPage() {
         </HeadingMain>
       </Row>
       <Row>
-          <HeadingMain id="massage" name="massage">
-            Massage
-          </HeadingMain>
+        <HeadingMain id="massage" name="massage">
+          Massage
+        </HeadingMain>
       </Row>
       <Row>
         <Col>
@@ -71,9 +71,9 @@ export function ServicesPage() {
         </Col>
       </Row>
       <Row>
-          <HeadingMain id="physiotherapy" name="physiotherapy">
-            Physiotherapy
-          </HeadingMain>
+        <HeadingMain id="physiotherapy" name="physiotherapy">
+          Physiotherapy
+        </HeadingMain>
       </Row>
       <Row>
         <Col>
@@ -104,4 +104,4 @@ export function ServicesPage() {
       </Row>
     </div>
   );
-}
+};

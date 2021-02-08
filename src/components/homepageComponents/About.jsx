@@ -5,7 +5,7 @@ import physios from '../../physios.jpg';
 import admin from '../../admin.jpg';
 import '../../styled/style.css';
 
-export function AboutPage() {
+export const AboutPage = () => {
   return (
     <div>
       <Row>
