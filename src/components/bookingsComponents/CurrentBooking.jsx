@@ -1,6 +1,6 @@
 import { HeadingMain } from "../../styled/main";
 import React, { useState, useEffect, Link } from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Row } from "react-bootstrap";
 import { StripeButton } from "./StripeButton";
 
 export function CurrentBooking(props) {
@@ -29,23 +29,24 @@ export function CurrentBooking(props) {
   return (
     currentBooking && (
       <>
-        <HeadingMain>Your Current Booking</HeadingMain>
-        <div>
+        <Row>
+          <HeadingMain>Your Current Booking</HeadingMain>
+        </Row>
+        <Row>
           <Card class="booking-cards">
             <p>Location: {currentBooking.location}</p>
             <p>Date: {currentBooking.date}</p>
             <p>Time: {currentBooking.time}</p>
             <p>Service: {currentBooking.name}</p>
             <p>Cost: ${currentBooking.cost}</p>
-          <Link to='/' onClick={onCancelClick}>Cancel Booking</Link>
             <Button variant="secondary" onClick={onCancelClick}>
-            Cancel Booking
+              Cancel Booking
             </Button>
           </Card>
-        </div>
-        <div>
+        </Row>
+        <Row>
           <StripeButton />
-        </div>
+        </Row>
       </>
     )
   );
