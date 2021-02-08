@@ -5,20 +5,6 @@ describe("login form", () => {
   })
 })
 
-// ** Nested too deeply in bootstrap Navbar. need matcher to find **
-
-// describe("clicking on login", () => {
-//   it("should go to the login page", () => {
-//     cy.visit("/");
-//     cy.findByText(/login/).click();
-//     cy.url().should("include", "/login");
-//   });
-//   it("should render email and password inputs", () => {
-//     cy.findByLabelText(/email/i).should("exist");
-//     cy.findByLabelText(/password/i).should("exist");
-//   });
-// });
-
 describe('logs in', () => {
   it('using UI', () => {
     cy.visit('/login')

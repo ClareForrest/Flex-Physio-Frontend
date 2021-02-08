@@ -1,10 +1,11 @@
-describe("bookings form", () => {
-  it("renders bookings form with 5 dropdown selector fields", () => {
-    cy.visit("/bookings")
-    cy.findByLabelText(/location/i).should("be.visible")
-    cy.findByLabelText(/service/i).should("be.visible")
-    cy.findByLabelText(/practitioner/i).should("be.visible")
-    cy.findByLabelText(/date/i).should("be.visible")
-    cy.findByLabelText(/time/i).should("be.visible")
+describe('The Bookings Page', () => {
+  it('successfully loads', () => {
+    cy.visit("http://localhost:8080/bookings") 
   })
+
+  it("should go to the create bookings page", () => {
+    cy.visit("/");
+    cy.findByText(/bookings/).click();
+    cy.url().should("include", "/bookings");
+  });
 })
