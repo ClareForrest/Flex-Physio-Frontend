@@ -64,7 +64,7 @@ export function UpdateProfile() {
     <>
       <Row>
         <HeadingContainer>
-          <HeadingMain>Edit Your Profile Information:</HeadingMain>
+          <HeadingMain>Edit Your Profile Information</HeadingMain>
         </HeadingContainer>
       </Row>
       <Row>

@@ -21,7 +21,7 @@ export function IndividualAvailability(props) {
       <>
         <Row>
           <HeadingContainer>
-            <HeadingMain>Your Current Availabilities:</HeadingMain>
+            <HeadingMain>Your Current Availabilities</HeadingMain>
           </HeadingContainer>
         </Row>
         <Row>

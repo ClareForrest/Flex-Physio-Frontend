@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Row, Card, Button } from "react-bootstrap";
-import { HeadingMain } from "../styled/main";
+import { HeadingMain, HeadingContainer } from "../styled/main";
 import { Link } from "react-router-dom";
 
 export function SignUp({ history }) {
@@ -53,13 +53,15 @@ export function SignUp({ history }) {
   return (
     <>
       <Row>
+        <HeadingContainer>
         <HeadingMain>
           Already a Member?
-          <Link to="/login" id="sign-up-link">
+          <Link to="/login" id="black-text-link">
             {" "}
             Log In
           </Link>
         </HeadingMain>
+        </HeadingContainer>
       </Row>
       <Row>
         <Card className="login-card-size">

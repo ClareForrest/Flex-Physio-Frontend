@@ -1,8 +1,9 @@
-import { HeadingMain } from "../../styled/main";
-import React, { useState, useEffect, Link } from "react";
+import { HeadingContainer, HeadingMain } from "../../styled/main";
+import React, { useState, useEffect } from "react";
 import { Button, Card, Row } from "react-bootstrap";
 import { StripeButton } from "./StripeButton";
 
+// returns the booking.last from the bookings table
 export function CurrentBooking(props) {
   const [currentBooking, setCurrentBooking] = useState([]);
   useEffect(() => {
@@ -14,7 +15,6 @@ export function CurrentBooking(props) {
       .then((response) => response.json())
       .then((body) => setCurrentBooking(body));
   }, []);
-  // shows the most recently saved booking in the array
 
   async function onCancelClick(e) {
     e.preventDefault();
@@ -29,10 +29,10 @@ export function CurrentBooking(props) {
   return (
     currentBooking && (
       <>
-        <Row>
-          <HeadingMain>Your Current Booking</HeadingMain>
-        </Row>
-        <Row>
+      <HeadingContainer>
+        <HeadingMain>Your Current Booking</HeadingMain>
+      </HeadingContainer>
+        <div>
           <Card class="booking-cards">
             <p>Location: {currentBooking.location}</p>
             <p>Date: {currentBooking.date}</p>

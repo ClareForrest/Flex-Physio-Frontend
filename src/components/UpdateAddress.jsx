@@ -57,7 +57,7 @@ export function UpdateAddress() {
     <>
       <Row>
         <HeadingContainer>
-          <HeadingMain>Edit Address:</HeadingMain>
+          <HeadingMain>Edit Address</HeadingMain>
         </HeadingContainer>
       </Row>
       <Row>
