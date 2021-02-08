@@ -64,3 +64,7 @@ a {
   align-items: flex-end;
   margin: 0 20px 0 0;
 }
+
+.silhouette-image {
+  width: 100%;
+}
