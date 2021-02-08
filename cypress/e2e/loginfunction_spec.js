@@ -16,8 +16,6 @@ before(function fetchUser () {
 beforeEach(function setUser () {
   cy.visit('/', {
     onBeforeLoad (win) {
-      // and before the page finishes loading
-      // set the user object in local storage
       win.localStorage.setItem('user', JSON.stringify(user))
     },
   })
@@ -26,10 +24,7 @@ beforeEach(function setUser () {
 
 describe('JWT', () => {
   it('makes authenticated request', () => {
-  // we can make authenticated request ourselves
-  // since we know the token
-    cy.request({
-      // Was: url: 'http://localhost:4000/users', 
+    cy.request({ 
       url: 'http://localhost:8080/login',
       auth: {
         bearer: user.token,
@@ -51,7 +46,6 @@ describe('JWT', () => {
   })
 
   it('shows loaded user', () => {
-  // this user information came from authenticated XHR call
     cy.contains('li', 'Test User').should('be.visible')
   })
 })
