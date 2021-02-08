@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HeadingMain, HeadingContainer } from "../styled/main";
 import { Row, Card, Button } from "react-bootstrap";
 
-export function CreateAddress({ history }) {
+export const CreateAddress = ({ history }) => {
   const [street, setStreet] = useState("");
   const [suburb, setSuburb] = useState("");
   const [state, setState] = useState("");

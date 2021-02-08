@@ -1,6 +1,6 @@
 import { HeadingContainer, HeadingMain } from "../../styled/main";
 import React, { useState, useEffect } from "react";
-import { Button, Card, Row } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { StripeButton } from "./StripeButton";
 
 // returns the booking.last from the bookings table
@@ -40,7 +40,7 @@ export const CurrentBooking = (props) => {
             <p>Service: {currentBooking.name}</p>
             <p>Cost: ${currentBooking.cost}</p>
             <Button variant="secondary" onClick={onCancelClick}>
-              Cancel Booking
+            Cancel Booking
             </Button>
           </Card>
         </div>
