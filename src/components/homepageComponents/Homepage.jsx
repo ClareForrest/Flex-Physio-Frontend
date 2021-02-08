@@ -6,7 +6,7 @@ import admin from "../../admin.jpg";
 import silhouette from "../../silhouette.jpg";
 import "../../styled/style.css";
 
-export function HomePage() {
+export const HomePage = () => {
   return (
     <div>
       <Image src={silhouette} className="silhouette-image" />

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { Row, Card, Button } from "react-bootstrap";
 
-export function CreateBooking(props) {
+export const CreateBooking = (props) => {
   const user = JSON.parse(localStorage.getItem("user"));
   // Allows user to select a pre-defined location from the dropdown menu.
   const locationOptions = [
@@ -12,7 +12,7 @@ export function CreateBooking(props) {
   ];
   const [location, setLocation] = useState(null);
 
-  function handleChangeLocation(selectedLocation) {
+  const handleChangeLocation = (selectedLocation) => {
     setLocation(selectedLocation);
   }
   // Allows user to select a pre-defined service from the dropdown menu.
@@ -22,7 +22,7 @@ export function CreateBooking(props) {
   ];
   const [service, setService] = useState(null);
 
-  function handleChangeServiceAndCost(selectedService) {
+  const handleChangeServiceAndCost = (selectedService) => {
     setService(selectedService);
   }
 
@@ -48,7 +48,7 @@ export function CreateBooking(props) {
 
   const [practitioner, setPractitioner] = useState(null);
 
-  function handleChangePractitioners(selectedPractitioner) {
+  const handleChangePractitioners = (selectedPractitioner) => {
     setPractitioner(selectedPractitioner);
   }
 
@@ -63,7 +63,7 @@ export function CreateBooking(props) {
   ];
   const [date, setDate] = useState(null);
 
-  function handleChangeDate(selectedDate) {
+  const handleChangeDate = (selectedDate) => {
     setDate(selectedDate);
   }
 
@@ -79,7 +79,7 @@ export function CreateBooking(props) {
   ];
   const [time, setTime] = useState(null);
 
-  function handleChangeTime(selectedTime) {
+  const handleChangeTime = (selectedTime) => {
     setTime(selectedTime);
   }
 
@@ -154,4 +154,4 @@ export function CreateBooking(props) {
       </Row>
     </>
   );
-}
+};
