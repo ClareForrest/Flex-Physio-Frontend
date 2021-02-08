@@ -3,12 +3,10 @@ import { Row, Card, Button } from "react-bootstrap";
 import { HeadingMain, HeadingContainer } from "../styled/main";
 import { Link } from "react-router-dom";
 
-export function Login({ history }) {
+export const Login = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errMessage, setErrMessage] = useState("");
-  
-
 
   async function onFormSubmit(event) {
     event.preventDefault();
@@ -81,4 +79,4 @@ export function Login({ history }) {
       </Row>
     </>
   );
-}
+};

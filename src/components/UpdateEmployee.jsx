@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { HeadingContainer, HeadingMain } from '../styled/main';
 import { Row, Card, Button } from "react-bootstrap";
 
-export function UpdateEmployee() {
+export const UpdateEmployee = () => {
   
   const [availability, setAvailability] = useState("");
   const history = useHistory();
