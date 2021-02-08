@@ -32,7 +32,7 @@ export function CurrentBooking(props) {
       <HeadingContainer>
         <HeadingMain>Your Current Booking</HeadingMain>
       </HeadingContainer>
-        <div>
+        <Row>
           <Card class="booking-cards">
             <p>Location: {currentBooking.location}</p>
             <p>Date: {currentBooking.date}</p>
