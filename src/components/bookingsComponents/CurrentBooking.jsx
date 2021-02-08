@@ -45,6 +45,8 @@ export const CurrentBooking = (props) => {
           </Card>
         </div>
         <div>
+          {/* The stripe button is passing props of the current booking which contains information like cost which can be passed to the stripe component and then the controller,
+          this then allows price to be dynamically rendered in the stripe form. */}
           <StripeButton currentBooking={currentBooking} />
         </div>
       </>

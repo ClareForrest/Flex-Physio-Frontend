@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { HeadingMain, HeadingContainer } from "../styled/main";
 import { Row, Card, Button } from "react-bootstrap";
 
+// this connects to the create method in the API through a fetch POST http request, and puts in address information of a user. 
 export const CreateAddress = ({ history }) => {
   const [street, setStreet] = useState("");
   const [suburb, setSuburb] = useState("");

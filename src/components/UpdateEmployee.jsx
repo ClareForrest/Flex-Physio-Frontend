@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { HeadingContainer, HeadingMain } from '../styled/main';
 import { Row, Card, Button } from "react-bootstrap";
 
+// This function allows employees to view their current availability, and update it with a GET and PUT fetch. 
 export const UpdateEmployee = () => {
   
   const [availability, setAvailability] = useState("");

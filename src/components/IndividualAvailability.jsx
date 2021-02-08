@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { HeadingMain, HeadingContainer } from "../styled/main";
 import { Row, Card, Button } from "react-bootstrap";
 
+// Similarly to the availability.jsx, it shows availability to employees, but only shows the currently logged in user their own availability and allows editing through a separate component.
 export const IndividualAvailability = (props) => {
   const [employee, setEmployee] = useState(null);
   const id = props.match.params.id;

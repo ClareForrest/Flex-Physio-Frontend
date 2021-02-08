@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
-
+// This function gets the user "profile" in terms of their address information. It renders it for users.
 export function GetProfile(props) {
   const [address, setAddress] = useState(null);
   const user = JSON.parse(localStorage.getItem("user"));
@@ -41,6 +41,7 @@ export function GetProfile(props) {
   )
 }
 
+// this profile function gets more profile information - this refers directly to user information such as their name. 
 function Profile(props) {
   const user = JSON.parse(localStorage.getItem("user"));
   const id = user.id;

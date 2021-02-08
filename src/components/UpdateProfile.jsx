@@ -4,6 +4,7 @@ import { HeadingMain, HeadingContainer } from "../styled/main";
 import { Row, Card, Button } from "react-bootstrap";
 // import { useParams } from "react-router-dom";
 
+// This function fetches previously existing value for user profile with a get request, then makes a put request to the relevant controller when a user updates those values.
 export function UpdateProfile() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,6 +33,7 @@ export function UpdateProfile() {
       });
   }, [id]);
 
+  // This is the specific function that sends update values to the rails API 
   async function onEditSubmit(e) {
     e.preventDefault();
     try {

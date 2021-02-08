@@ -21,6 +21,7 @@ export const StripeButton = (props) => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
+        // collecting props from the stripe button in currentbooking.jsx for purpose of passing cost attribute to charges controller
         body: JSON.stringify({ id: props.currentBooking.id }),
       }
     );

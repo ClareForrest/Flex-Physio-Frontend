@@ -3,6 +3,7 @@ import { Row, Card, Button } from "react-bootstrap";
 import { HeadingMain, HeadingContainer } from "../styled/main";
 import { Link } from "react-router-dom";
 
+// this function allows users to login and uses knock authentication - submits a token to local storage that must match one in the rails API (authentication function).
 export const Login = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
