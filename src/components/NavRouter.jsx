@@ -13,7 +13,6 @@ import { CreateBooking } from "./bookingsComponents/CreateBooking";
 import { CurrentBooking } from "./bookingsComponents/CurrentBooking";
 import { CreateAddress } from "./CreateAddress";
 import { UpdateProfile } from "./UpdateProfile";
-// import { EditBooking } from "./bookingsComponents/EditBooking";
 import { UpdateAddress } from "./UpdateAddress";
 import { AboutPage } from "./homepageComponents/About";
 import { ServicesPage } from "./homepageComponents/Services";
@@ -111,11 +110,6 @@ export function NavRouter() {
           path="/bookings/current"
           component={CurrentBooking}
         />
-        {/* <ProtectedRoute
-          exact
-          path="/booking/show/:id"
-          component={EditBooking}
-        /> */}
         <ProtectedRoute
           exact
           path="/bookings/history"

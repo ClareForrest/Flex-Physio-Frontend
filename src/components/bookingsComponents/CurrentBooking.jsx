@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Card } from "react-bootstrap";
 import { StripeButton } from "./StripeButton";
 
+// returns the booking.last from the bookings table
 export function CurrentBooking(props) {
   const [currentBooking, setCurrentBooking] = useState([]);
   useEffect(() => {
@@ -14,7 +15,6 @@ export function CurrentBooking(props) {
       .then((response) => response.json())
       .then((body) => setCurrentBooking(body));
   }, []);
-  // shows the most recently saved booking in the array
 
   async function onCancelClick(e) {
     e.preventDefault();
@@ -39,7 +39,6 @@ export function CurrentBooking(props) {
             <p>Time: {currentBooking.time}</p>
             <p>Service: {currentBooking.name}</p>
             <p>Cost: ${currentBooking.cost}</p>
-          {/* <Link to='/' onClick={onCancelClick}>Cancel Booking</Link> */}
             <Button variant="secondary" onClick={onCancelClick}>
             Cancel Booking
             </Button>

@@ -2,6 +2,7 @@ import { HeadingMain, HeadingContainer } from "../../styled/main";
 import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 
+// selects all bookings from the bookings table and displays
 export function AllBookingsFunction() {
   const [allBookings, setAllBookings] = useState([]);
   useEffect(() => {
