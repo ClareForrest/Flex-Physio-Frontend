@@ -7,9 +7,9 @@ const stripePromise = loadStripe(
   "pk_test_51Ho5dVFmgeBEAT7KoH3k5qPewwkvipHdsNdjJB9ekThFbMCvj25FEi5ZX7xhMjNzGmF4OSUQL2MPFoklKV3DE6TT00tbGcIBFh"
 );
 
-export function StripeButton(props) {
-  console.log(props)
-  
+export const StripeButton = (props) => {
+  console.log(props);
+
   const onStripeButtonClick = async (event) => {
     const stripe = await stripePromise;
 
@@ -21,7 +21,7 @@ export function StripeButton(props) {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-        body: JSON.stringify({id: props.currentBooking.id})
+        body: JSON.stringify({ id: props.currentBooking.id }),
       }
     );
 
@@ -51,4 +51,4 @@ export function StripeButton(props) {
       </Button>
     </>
   );
-}
+};

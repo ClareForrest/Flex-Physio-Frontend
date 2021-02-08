@@ -5,20 +5,6 @@ describe("login form", () => {
   })
 })
 
-// ** Nested too deeply in bootstrap Navbar. need matcher to find **
-
-// describe("clicking on login", () => {
-//   it("should go to the login page", () => {
-//     cy.visit("/");
-//     cy.findByText(/login/).click();
-//     cy.url().should("include", "/login");
-//   });
-//   it("should render email and password inputs", () => {
-//     cy.findByLabelText(/email/i).should("exist");
-//     cy.findByLabelText(/password/i).should("exist");
-//   });
-// });
-
 describe('logs in', () => {
   it('using UI', () => {
     cy.visit('/login')
@@ -29,12 +15,11 @@ describe('logs in', () => {
     cy.get('[name=password]').type('123456')
     cy.contains('button', 'Login').click()
 
-    // confirm we have logged in successfully
+    // confirm login successful
     cy.location('pathname').should('equal', '/')
     cy.contains('Our Physiotherpists')
     .should('be.visible')
     .then(() => {
-    /* global window */
       const userString = window.localStorage.getItem('user')
 
       expect(userString).to.be.a('string')
@@ -43,7 +28,7 @@ describe('logs in', () => {
       expect(user).to.be.an('object')
       expect(user).to.have.keys([
         'id',
-        'email', //was 'username',
+        'email',
         'firstName',
         'lastName',
         'token',
