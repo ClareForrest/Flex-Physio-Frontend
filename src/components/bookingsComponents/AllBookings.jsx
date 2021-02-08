@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 
 // selects all bookings from the bookings table and displays
-export function AllBookingsFunction() {
+export const AllBookingsFunction = () => {
   const [allBookings, setAllBookings] = useState([]);
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/api/bookings/history`)
@@ -33,4 +33,4 @@ export function AllBookingsFunction() {
       </>
     )
   );
-}
+};
