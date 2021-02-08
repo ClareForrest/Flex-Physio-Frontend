@@ -18,19 +18,18 @@ import { AboutPage } from "./homepageComponents/About";
 import { ServicesPage } from "./homepageComponents/Services";
 import { Success } from "../components/bookingsComponents/Success";
 import { Cancel } from "../components/bookingsComponents/Cancel";
-import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { UpdateEmployee } from './UpdateEmployee';
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { UpdateEmployee } from "./UpdateEmployee";
 
-
-export function NavRouter() {
+export const NavRouter = () => {
   const history = useHistory();
 
   function logout(e) {
     e.preventDefault();
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    localStorage.removeItem("isEmployee")
+    localStorage.removeItem("isEmployee");
     history.push("/login");
   }
 
@@ -77,7 +76,7 @@ export function NavRouter() {
           </Nav.Link>
         </Nav.Item>
         <NavDropdown title="Profile" id="nav-dropdown">
-        <NavDropdown.Item eventKey="5.1">
+          <NavDropdown.Item eventKey="5.1">
             <Link class="dropdown-links" to="/profile">
               View Profile
             </Link>
@@ -135,12 +134,20 @@ export function NavRouter() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/sign-up" component={SignUp} />
         <ProtectedRoute exact path="/availabilities" component={Availability} />
-        <ProtectedRoute exact path="/availability/:id" component={IndividualAvailability} />
-        <ProtectedRoute exact path="/update-availability" component={UpdateEmployee} />
+        <ProtectedRoute
+          exact
+          path="/availability/:id"
+          component={IndividualAvailability}
+        />
+        <ProtectedRoute
+          exact
+          path="/update-availability"
+          component={UpdateEmployee}
+        />
         <Route exact path="/success" component={Success} />
         <Route exact path="/cancel" component={Cancel} />
         <Route exact path="/addresses/:id" />
       </Switch>
     </>
   );
-}
+};

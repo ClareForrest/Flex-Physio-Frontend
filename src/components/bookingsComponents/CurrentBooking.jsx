@@ -4,7 +4,7 @@ import { Button, Card } from "react-bootstrap";
 import { StripeButton } from "./StripeButton";
 
 // returns the booking.last from the bookings table
-export function CurrentBooking(props) {
+export const CurrentBooking = (props) => {
   const [currentBooking, setCurrentBooking] = useState([]);
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/api/bookings/current`, {
@@ -29,9 +29,15 @@ export function CurrentBooking(props) {
   return (
     currentBooking && (
       <>
+<<<<<<< HEAD
       <HeadingContainer>
         <HeadingMain>Your Current Booking</HeadingMain>
       </HeadingContainer>
+=======
+        <HeadingContainer>
+          <HeadingMain>Your Current Booking</HeadingMain>
+        </HeadingContainer>
+>>>>>>> f2f699056a775362a8010fa8958cac50004e7746
         <div>
           <Card class="booking-cards">
             <p>Location: {currentBooking.location}</p>
@@ -50,4 +56,8 @@ export function CurrentBooking(props) {
       </>
     )
   );
+<<<<<<< HEAD
 }
+=======
+};
+>>>>>>> f2f699056a775362a8010fa8958cac50004e7746
