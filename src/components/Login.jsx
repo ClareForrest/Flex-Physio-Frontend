@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Row, Card, Button } from "react-bootstrap";
-import { HeadingMain } from "../styled/main";
+import { HeadingMain, HeadingContainer } from "../styled/main";
 import { Link } from "react-router-dom";
 
 export function Login({ history }) {
@@ -42,13 +42,15 @@ export function Login({ history }) {
     <>
       {errMessage && <span>{errMessage}</span>}
       <Row>
-        <HeadingMain>
-          Not a Member?
-          <Link to="/sign-up" id="sign-up-link">
-            {" "}
-            Sign Up
-          </Link>
-        </HeadingMain>
+        <HeadingContainer>
+          <HeadingMain>
+            Not a Member?
+            <Link to="/sign-up" id="sign-up-link">
+              {" "}
+              Sign Up
+            </Link>
+          </HeadingMain>
+        </HeadingContainer>
       </Row>
       <Row>
         <Card className="login-card-size">

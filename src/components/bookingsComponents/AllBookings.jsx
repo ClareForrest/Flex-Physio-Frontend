@@ -1,4 +1,4 @@
-import { HeadingMain } from "../../styled/main";
+import { HeadingMain, HeadingContainer } from "../../styled/main";
 import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 
@@ -13,7 +13,9 @@ export function AllBookingsFunction() {
   return (
     allBookings && (
       <>
-        <HeadingMain>Your Previous Bookings</HeadingMain>
+        <HeadingContainer>
+          <HeadingMain>Your Previous Bookings</HeadingMain>
+        </HeadingContainer>
         {allBookings.map((booking, index) => {
           return (
             <div key={index}>

@@ -1,4 +1,4 @@
-import { HeadingMain, HeadingSub } from "../../styled/main";
+import { HeadingMain, HeadingSub, HeadingContainer } from "../../styled/main";
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { Row, Card, Button } from "react-bootstrap";
@@ -111,9 +111,13 @@ export function CreateBooking(props) {
   return (
     <>
     <Row>
-      <Card>
-      <form onSubmit={onFormSubmit} className="alignment">
+      <HeadingContainer>
         <HeadingMain>Make a Booking</HeadingMain>
+      </HeadingContainer>
+    </Row>
+    <Row>
+      <Card className="alignment">
+      <form onSubmit={onFormSubmit} >
         <HeadingSub>Select a Location</HeadingSub>
         <Select
           options={locationOptions}
