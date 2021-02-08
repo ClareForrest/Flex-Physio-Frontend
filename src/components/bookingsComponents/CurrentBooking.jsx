@@ -45,7 +45,7 @@ export function CurrentBooking(props) {
           </Card>
         </Row>
         <Row>
-          <StripeButton />
+          <StripeButton currentBooking={currentBooking} />
         </Row>
       </>
     )
