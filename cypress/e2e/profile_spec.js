@@ -5,7 +5,7 @@ describe('The Profile Page', () => {
 
   it("should go to the profile page", () => {
     cy.visit("/");
-    cy.findByText(/bookings/).click();
+    cy.findByText(/profile/).click();
     cy.url().should("include", "/profile");
   });
 })

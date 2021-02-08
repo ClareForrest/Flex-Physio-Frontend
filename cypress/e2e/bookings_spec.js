@@ -3,7 +3,7 @@ describe('The Bookings Page', () => {
     cy.visit("http://localhost:8080/bookings") 
   })
 
-  it("should go to the create bookings page", () => {
+  it("should go to the bookings page", () => {
     cy.visit("/");
     cy.findByText(/bookings/).click();
     cy.url().should("include", "/bookings");

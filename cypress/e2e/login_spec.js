@@ -15,12 +15,11 @@ describe('logs in', () => {
     cy.get('[name=password]').type('123456')
     cy.contains('button', 'Login').click()
 
-    // confirm we have logged in successfully
+    // confirm login successful
     cy.location('pathname').should('equal', '/')
     cy.contains('Our Physiotherpists')
     .should('be.visible')
     .then(() => {
-    /* global window */
       const userString = window.localStorage.getItem('user')
 
       expect(userString).to.be.a('string')
@@ -29,7 +28,7 @@ describe('logs in', () => {
       expect(user).to.be.an('object')
       expect(user).to.have.keys([
         'id',
-        'email', //was 'username',
+        'email',
         'firstName',
         'lastName',
         'token',

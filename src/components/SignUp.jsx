@@ -3,7 +3,7 @@ import { Row, Card, Button } from "react-bootstrap";
 import { HeadingMain, HeadingContainer } from "../styled/main";
 import { Link } from "react-router-dom";
 
-export function SignUp({ history }) {
+export const SignUp = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [first_name, setFirstname] = useState("");

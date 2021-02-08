@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { HeadingContainer, HeadingMain } from '../styled/main';
-import { Row, Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 
-export function Availability() {
+export const Availability = () => {
   const [employee, setEmployee] = useState([]);
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/api/availabilities`)
