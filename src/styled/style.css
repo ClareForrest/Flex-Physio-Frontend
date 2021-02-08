@@ -57,3 +57,10 @@ a {
   height: auto;
   width: 100%
 }
+
+.staff-link {
+  flex-direction: flex-wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 0 20px 0 0;
+}
