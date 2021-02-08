@@ -56,7 +56,7 @@ export function SignUp({ history }) {
         <HeadingContainer>
         <HeadingMain>
           Already a Member?
-          <Link to="/login" id="sign-up-link">
+          <Link to="/login" id="black-text-link">
             {" "}
             Log In
           </Link>
