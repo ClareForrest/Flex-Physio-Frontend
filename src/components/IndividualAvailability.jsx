@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { HeadingMain } from "../styled/main";
+import { HeadingMain, HeadingContainer } from "../styled/main";
 import { Row, Card, Button } from "react-bootstrap";
 
 export function IndividualAvailability(props) {
@@ -20,7 +20,9 @@ export function IndividualAvailability(props) {
     employee && (
       <>
         <Row>
-          <HeadingMain>Your Current Availabilities</HeadingMain>
+          <HeadingContainer>
+            <HeadingMain>Your Current Availabilities:</HeadingMain>
+          </HeadingContainer>
         </Row>
         <Row>
           <Card className="login-card-size">

@@ -16,8 +16,9 @@ export function ProtectedRoute({ exact, path, component }) {
         if (response.status >= 400) {
           throw new Error("not authorized");
         } else {
-          const { user } = await response.json();
+          const { user, is_employee } = await response.json();
           localStorage.setItem("user", JSON.stringify(user));
+          localStorage.setItem("isEmployee", is_employee)
           setAuth(true);
           setLoading(false);
         }

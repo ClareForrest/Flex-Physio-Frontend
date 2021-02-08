@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Row, Card, Button } from "react-bootstrap";
-import { HeadingMain } from "../styled/main";
+import { HeadingMain, HeadingContainer } from "../styled/main";
 
 export function UpdateAddress() {
   const [street, setStreet] = useState("");
@@ -56,7 +56,9 @@ export function UpdateAddress() {
   return (
     <>
       <Row>
-        <HeadingMain>Edit Address</HeadingMain>
+        <HeadingContainer>
+          <HeadingMain>Edit Address:</HeadingMain>
+        </HeadingContainer>
       </Row>
       <Row>
         <Card className="login-card-size">

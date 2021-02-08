@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { HeadingMain } from "../styled/main";
+import { HeadingMain, HeadingContainer } from "../styled/main";
 import { Row, Card, Button } from "react-bootstrap";
 // import { useParams } from "react-router-dom";
 
@@ -63,7 +63,9 @@ export function UpdateProfile() {
   return (
     <>
       <Row>
-        <HeadingMain>Edit Profile</HeadingMain>
+        <HeadingContainer>
+          <HeadingMain>Edit Your Profile Information:</HeadingMain>
+        </HeadingContainer>
       </Row>
       <Row>
         <Card className="login-card-size">

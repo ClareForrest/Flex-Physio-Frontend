@@ -31,6 +31,7 @@ export function NavRouter() {
     e.preventDefault();
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+    localStorage.removeItem("isEmployee")
     history.push("/login");
   }
 

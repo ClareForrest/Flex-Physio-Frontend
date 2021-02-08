@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-
-import { Card } from "react-bootstrap";;
+import { HeadingContainer, HeadingMain } from '../styled/main';
+import { Row, Card, Button } from "react-bootstrap";
 
 
 export function Availability() {
@@ -16,7 +16,9 @@ export function Availability() {
 
   return (
     <div>
-      <h1>Availabilities:</h1>
+      <HeadingContainer>
+        <HeadingMain>Availabilities:</HeadingMain>
+      </HeadingContainer>
       {employee.map((body) => {
         return (
           <Card className="availability-cards">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { HeadingMain } from '../styled/main';
+import { HeadingContainer, HeadingMain } from '../styled/main';
 import { Row, Card, Button } from "react-bootstrap";
 
 export function UpdateEmployee() {
@@ -49,7 +49,9 @@ export function UpdateEmployee() {
   return (
     <>
     <Row>
-      <HeadingMain>Edit Profile</HeadingMain>
+      <HeadingContainer>
+        <HeadingMain>Edit Profile</HeadingMain>
+      </HeadingContainer>
     </Row>
     <Row>
       <Card className="login-card-size">

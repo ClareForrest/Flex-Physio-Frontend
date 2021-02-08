@@ -4,6 +4,7 @@ export const HeadingMain = styled.h1`
   font-family: Arial, sans-serif;
   font-size: 24px;
   color: black;
+  margin-top: 10px;
 `
 
 export const HeadingSub = styled.h2`
@@ -42,4 +43,9 @@ export const Footer = styled.footer`
   width: 100%;
   height: 100px;
   background-color: black;
+`
+
+export const HeadingContainer = styled.div`
+  display: flex;
+  margin: 0 auto;
 `
