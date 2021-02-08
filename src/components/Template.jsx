@@ -31,7 +31,7 @@ return(
         </NavRouter>
         </Col>
         <Footer>
-          <Link to="/availability/:id">
+          <Link to="/availability/:id" className='staff-link'>
             Staff
           </Link>
         </Footer>
