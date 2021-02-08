@@ -6,11 +6,7 @@ import { Link } from "react-router-dom";
 export function Login({ history }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [first_name, setFirstname] = useState("");
-  // const [last_name, setLastname] = useState("");
-  // const [phone_number, setPhonenumber] = useState("");
   const [errMessage, setErrMessage] = useState("");
-  
   
 
 

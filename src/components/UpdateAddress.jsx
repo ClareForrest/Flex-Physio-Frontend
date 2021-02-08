@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Row, Card, Button } from "react-bootstrap";
-import { HeadingMain } from "../styled/main";
+import { HeadingMain, HeadingContainer } from "../styled/main";
 
 export function UpdateAddress() {
   const [street, setStreet] = useState("");
@@ -47,7 +47,7 @@ export function UpdateAddress() {
           },
         }),
       });
-      history.push("/update-address");
+      history.push("/");
     } catch (err) {
       console.log(err.message);
     }
@@ -56,7 +56,9 @@ export function UpdateAddress() {
   return (
     <>
       <Row>
-        <HeadingMain>Edit Address</HeadingMain>
+        <HeadingContainer>
+          <HeadingMain>Edit Address:</HeadingMain>
+        </HeadingContainer>
       </Row>
       <Row>
         <Card className="login-card-size">
@@ -97,7 +99,14 @@ export function UpdateAddress() {
               value={postcode}
               onChange={(e) => setPostcode(e.target.value)}
             />
-            <Button variant="secondary" type="submit" value="Submit" />
+            <Button
+              variant="secondary"
+              id="submit"
+              type="submit"
+              value="Submit"
+            >
+              Update
+            </Button>
           </form>
         </Card>
       </Row>

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { HeadingContainer, HeadingMain } from '../styled/main';
+import { Row, Card, Button } from "react-bootstrap";
 
 
 export function Availability() {
@@ -14,13 +16,15 @@ export function Availability() {
 
   return (
     <div>
-      <h1>Availabilities:</h1>
+      <HeadingContainer>
+        <HeadingMain>Availabilities:</HeadingMain>
+      </HeadingContainer>
       {employee.map((body) => {
         return (
-          <div>
+          <Card className="availability-cards">
             <p>{body.first_name} {body.last_name}</p>
             <p>{body.availability}</p>
-          </div>
+          </Card>
         )
       })}
     </div>  
