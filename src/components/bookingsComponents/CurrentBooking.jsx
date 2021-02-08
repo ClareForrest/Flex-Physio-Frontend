@@ -29,15 +29,9 @@ export const CurrentBooking = (props) => {
   return (
     currentBooking && (
       <>
-<<<<<<< HEAD
-      <HeadingContainer>
-        <HeadingMain>Your Current Booking</HeadingMain>
-      </HeadingContainer>
-=======
         <HeadingContainer>
           <HeadingMain>Your Current Booking</HeadingMain>
         </HeadingContainer>
->>>>>>> f2f699056a775362a8010fa8958cac50004e7746
         <div>
           <Card class="booking-cards">
             <p>Location: {currentBooking.location}</p>
@@ -56,8 +50,4 @@ export const CurrentBooking = (props) => {
       </>
     )
   );
-<<<<<<< HEAD
-}
-=======
 };
->>>>>>> f2f699056a775362a8010fa8958cac50004e7746
