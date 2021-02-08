@@ -1,9 +1,9 @@
 a {
  text-decoration: none;
- color: lightgreen; 
+ color: white; 
 }
 
-#sign-up-link {
+#black-text-link {
   color: black; 
 }
 
@@ -56,4 +56,15 @@ a {
   flex-direction: flex-wrap;
   height: auto;
   width: 100%
+}
+
+.staff-link {
+  flex-direction: flex-wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 0 20px 0 0;
+}
+
+.silhouette-image {
+  width: 100%;
 }

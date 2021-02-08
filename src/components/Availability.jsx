@@ -17,7 +17,7 @@ export function Availability() {
   return (
     <div>
       <HeadingContainer>
-        <HeadingMain>Availabilities:</HeadingMain>
+        <HeadingMain>Availabilities</HeadingMain>
       </HeadingContainer>
       {employee.map((body) => {
         return (

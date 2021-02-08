@@ -1,12 +1,11 @@
-import { HeadingMain, HeadingSub } from "../../styled/main";
+import { HeadingMain, HeadingSub, HeadingContainer } from "../../styled/main";
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { Row, Card, Button } from "react-bootstrap";
 
 export function CreateBooking(props) {
   const user = JSON.parse(localStorage.getItem("user"));
-  // const id = user.id;
-  // Select a location. Dropdown menu from bookings.
+  // Allows user to select a pre-defined location from the dropdown menu.
   const locationOptions = [
     { value: "cbd", label: "CBD" },
     { value: "suburbs", label: "Suburbs" },
@@ -16,7 +15,7 @@ export function CreateBooking(props) {
   function handleChangeLocation(selectedLocation) {
     setLocation(selectedLocation);
   }
-
+  // Allows user to select a pre-defined service from the dropdown menu.
   const serviceOptions = [
     { value: "massage", label: "Massage" },
     { value: "physiotherapy", label: "Physiotherapy" },
@@ -53,8 +52,8 @@ export function CreateBooking(props) {
     setPractitioner(selectedPractitioner);
   }
 
-  // would like to get this displayed and selected through the calendar app
-  // pulled from employees availability
+  // Currently allows users to select a pre-defined location from the dropdown menu.
+  // Ultimately would like to have it pulled from employees availability
   const dateOptions = [
     { value: "Monday", label: "Monday" },
     { value: "Tuesday", label: "Tuesday" },
@@ -69,7 +68,6 @@ export function CreateBooking(props) {
   }
 
   const timeOptions = [
-    // will be good to get this displayed and selected through a calendar app
     { value: "09:00", label: "09:00" },
     { value: "10:00", label: "10:00" },
     { value: "11:00", label: "11:00" },
@@ -110,46 +108,50 @@ export function CreateBooking(props) {
   }
   return (
     <>
-    <Row>
-      <Card>
-      <form onSubmit={onFormSubmit} className="alignment">
-        <HeadingMain>Make a Booking</HeadingMain>
-        <HeadingSub>Select a Location</HeadingSub>
-        <Select
-          options={locationOptions}
-          value={location}
-          onChange={handleChangeLocation}
-        />
-        <HeadingSub>Select a Service</HeadingSub>
-        <Select
-          options={serviceOptions}
-          value={service}
-          onChange={handleChangeServiceAndCost}
-        />
-        <HeadingSub>Select a Practitioner</HeadingSub>
-        <Select
-          options={allPractitioners}
-          value={practitioner}
-          onChange={handleChangePractitioners}
-        />
-        <HeadingSub>Select a Date</HeadingSub>
-        <Select
-          options={dateOptions}
-          value={date}
-          onChange={handleChangeDate}
-        />
-        <HeadingSub>Select a Time</HeadingSub>
-        <Select
-          options={timeOptions}
-          value={time}
-          onChange={handleChangeTime}
-        />
-        <Button variant="secondary" type="submit" value="Confirm">
-          Confirm
-        </Button>
-      </form>
-      </Card>
-    </Row>
+      <Row>
+        <HeadingContainer>
+          <HeadingMain>Make a Booking</HeadingMain>
+        </HeadingContainer>
+      </Row>
+      <Row>
+        <Card className="alignment">
+          <form onSubmit={onFormSubmit}>
+            <HeadingSub>Select a Location</HeadingSub>
+            <Select
+              options={locationOptions}
+              value={location}
+              onChange={handleChangeLocation}
+            />
+            <HeadingSub>Select a Service</HeadingSub>
+            <Select
+              options={serviceOptions}
+              value={service}
+              onChange={handleChangeServiceAndCost}
+            />
+            <HeadingSub>Select a Practitioner</HeadingSub>
+            <Select
+              options={allPractitioners}
+              value={practitioner}
+              onChange={handleChangePractitioners}
+            />
+            <HeadingSub>Select a Date</HeadingSub>
+            <Select
+              options={dateOptions}
+              value={date}
+              onChange={handleChangeDate}
+            />
+            <HeadingSub>Select a Time</HeadingSub>
+            <Select
+              options={timeOptions}
+              value={time}
+              onChange={handleChangeTime}
+            />
+            <Button variant="secondary" type="submit" value="Confirm">
+              Confirm
+            </Button>
+          </form>
+        </Card>
+      </Row>
     </>
   );
 }

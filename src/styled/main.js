@@ -43,6 +43,10 @@ export const Footer = styled.footer`
   width: 100%;
   height: 100px;
   background-color: black;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin: 0 auto;
 `
 
 export const HeadingContainer = styled.div`

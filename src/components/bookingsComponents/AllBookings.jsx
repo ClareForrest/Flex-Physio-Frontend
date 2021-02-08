@@ -1,7 +1,8 @@
-import { HeadingMain } from "../../styled/main";
+import { HeadingMain, HeadingContainer } from "../../styled/main";
 import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 
+// selects all bookings from the bookings table and displays
 export function AllBookingsFunction() {
   const [allBookings, setAllBookings] = useState([]);
   useEffect(() => {
@@ -13,7 +14,9 @@ export function AllBookingsFunction() {
   return (
     allBookings && (
       <>
-        <HeadingMain>Your Previous Bookings</HeadingMain>
+        <HeadingContainer>
+          <HeadingMain>Your Previous Bookings</HeadingMain>
+        </HeadingContainer>
         {allBookings.map((booking, index) => {
           return (
             <div key={index}>

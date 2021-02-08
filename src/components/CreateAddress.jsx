@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HeadingMain } from "../styled/main";
+import { HeadingMain, HeadingContainer } from "../styled/main";
 import { Row, Card, Button } from "react-bootstrap";
 
 export function CreateAddress({ history }) {
@@ -35,7 +35,9 @@ export function CreateAddress({ history }) {
   return (
     <>
       <Row>
-        <HeadingMain>Add your Address Details</HeadingMain>
+        <HeadingContainer>
+          <HeadingMain>Add your Address Details</HeadingMain>
+        </HeadingContainer>
       </Row>
       <Row>
         <Card>
