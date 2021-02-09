@@ -4,8 +4,8 @@ describe('The Home Page', () => {
   })
 
   it("should go to the home page", () => {
-    cy.visit("/");
-    cy.findByText(/home/).click();
+    cy.visit("/home");
+    cy.findAllByText("About");
     cy.url().should("include", "/home");
   });
 })

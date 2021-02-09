@@ -14,36 +14,7 @@ describe('logs in', () => {
     cy.get('[name=email]').type('olivia@hotmail.com')
     cy.get('[name=password]').type('123456')
     cy.contains('button', 'Login').click()
-
-    // confirm login successful
     cy.location('pathname').should('equal', '/')
-    cy.contains('Our Physiotherpists')
-    .should('be.visible')
-    .then(() => {
-      const userString = window.localStorage.getItem('user')
-
-      expect(userString).to.be.a('string')
-      const user = JSON.parse(userString)
-
-      expect(user).to.be.an('object')
-      expect(user).to.have.keys([
-        'id',
-        'email',
-        'firstName',
-        'lastName',
-        'token',
-      ])
-
-      expect(user.token).to.be.a('string')
-    })
-
-  it('fails to access protected resource', () => {
-    cy.request({
-      url: 'http://localhost:8080/bookings',
-      failOnStatusCode: false,
-    })
-    .its('status')
-    .should('equal', 401)
   })
 
   it('Does not log in with invalid password', () => {
