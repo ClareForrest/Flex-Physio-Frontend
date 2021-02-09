@@ -72,15 +72,16 @@ function Profile(props) {
               <AvailabilityButtons />
             </p>
           )}
+          <Row>
+            {!props.address && (
+              <Row>
+                <Button variant="secondary" href={"/create-address"}>Create Address</Button>
+              </Row>
+            )}
+          </Row>
         </Card>
       </Row>
-      <Row>
-        {!props.address && (
-          <Row>
-            <Link to={"/create-address"}>Create Address</Link>
-          </Row>
-        )}
-      </Row>
+
     </>
   );
 }
