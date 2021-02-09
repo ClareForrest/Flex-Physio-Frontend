@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
-
+// This function gets the user "profile" in terms of their address information. It renders it for users.
 export function GetProfile(props) {
   const [address, setAddress] = useState(null);
   const user = JSON.parse(localStorage.getItem("user"));
@@ -27,13 +27,15 @@ export function GetProfile(props) {
               <HeadingMain>Your Address Details</HeadingMain>
             </HeadingContainer>
           </Row>
-          <Card className="login-card-size">
-            <p>Street: {address.street}</p>
-            <p>Suburb: {address.suburb}</p>
-            <p>State: {address.state}</p>
-            <p>Postcode: {address.postcode}</p>
-            <p><Link to={"/update-address"}>Update your contact details:</Link></p>
-          </Card>
+          <Row>
+            <Card className="login-card-size">
+              <p>Street: {address.street}</p>
+              <p>Suburb: {address.suburb}</p>
+              <p>State: {address.state}</p>
+              <p>Postcode: {address.postcode}</p>
+              <Row><Link to={"/update-address"}>Update your contact details:</Link></Row>
+            </Card>
+          </Row>
         </>
       )
       }
@@ -41,6 +43,7 @@ export function GetProfile(props) {
   )
 }
 
+// this profile function gets more profile information - this refers directly to user information such as their name. 
 function Profile(props) {
   const user = JSON.parse(localStorage.getItem("user"));
   const id = user.id;
@@ -50,7 +53,7 @@ function Profile(props) {
     <>
       <Row>
         <HeadingContainer>
-          <HeadingMain>Your Contact Details:</HeadingMain>
+          <HeadingMain>Your Contact Details</HeadingMain>
         </HeadingContainer>
       </Row>
       <Row>
@@ -59,13 +62,14 @@ function Profile(props) {
           <p>Last Name: {user.last_name}</p>
           <p>Email: {user.email}</p>
           <p>Phone number: {user.phone_number}</p>
-          <p><Link to={"/update-profile"}>Update your contact details</Link></p>
+          <Row><Link to={"/update-profile"}>Update your contact details</Link></Row>
+          <br></br>
           {isEmployee === "true" && <p><AvailabilityButtons /></p>}
         </Card>
       </Row>
       <Row>
         {!props.address && (
-          <Link to={"/create-address"}>Create Address</Link>
+          <Row><Link to={"/create-address"}>Create Address</Link></Row>
         )}
       </Row>
     </>
@@ -78,8 +82,9 @@ function AvailabilityButtons() {
   const id = user.id;
   return (
     <>
-      <Link to={"/availabilities"}>See all availabilities</Link>
-      <Link to={`/availability/${id}`}>See your individual availabilities</Link>
+      <Row><Link to={"/availabilities"}>See all availabilities</Link></Row>
+      <br></br>
+      <Row><Link to={`/availability/${id}`}>See your availability</Link></Row>
     </>
   )
 }

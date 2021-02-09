@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
 
+// this contains logic for "protected" routes so only authenticated/authorised users can access certain URLs. 
+// Also contains logic for storing user information as an object in local storage per line 21 and 22 to then use as the means to render information dynamically for different users.
 export const ProtectedRoute = ({ exact, path, component }) => {
   const [auth, setAuth] = useState(false);
   const [loading, setLoading] = useState(true);

@@ -5,6 +5,8 @@ import logo from "../logo.png";
 import { NavRouter } from "./NavRouter";
 import { Link } from "react-router-dom";
 
+const isEmployee = localStorage.getItem("isEmployee")
+
 export const Template = (props) => {
   return (
     <Container>
@@ -22,11 +24,12 @@ export const Template = (props) => {
           <NavRouter>{props.children}</NavRouter>
         </Col>
         <Footer>
-          <Link to="/availability/:id" className="staff-link">
+          {isEmployee === "true" &&<Link to="/availability/:id" className="staff-link">
             Staff
-          </Link>
+          </Link>}
         </Footer>
       </Row>
     </Container>
   );
 };
+

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { HeadingContainer, HeadingMain } from '../styled/main';
 import { Card } from "react-bootstrap";
 
-
+// This function renders the current availabilities of all employees through the index method in the API. It does this by mapping through them.
 export const Availability = () => {
   const [employee, setEmployee] = useState([]);
   useEffect(() => {

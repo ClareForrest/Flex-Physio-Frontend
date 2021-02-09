@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Row, Card, Button } from "react-bootstrap";
 import { HeadingMain, HeadingContainer } from "../styled/main";
 
+// This function allows users to view, and update their currently used address values, and then return these to the API with a second fetch.
 export function UpdateAddress() {
   const [street, setStreet] = useState("");
   const [suburb, setSuburb] = useState("");

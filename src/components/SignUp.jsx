@@ -3,6 +3,7 @@ import { Row, Card, Button } from "react-bootstrap";
 import { HeadingMain, HeadingContainer } from "../styled/main";
 import { Link } from "react-router-dom";
 
+// contains logic for sign up and fetches with a POST to the rails API to store relevant user information 
 export const SignUp = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
