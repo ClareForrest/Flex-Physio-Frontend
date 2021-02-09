@@ -1,9 +1,9 @@
-import { Row, Col, Image } from 'react-bootstrap';
-import { HeadingMain, HeadingSub } from '../../styled/main';
-import massage from '../../massage.jpg';
-import physios from '../../physios.jpg';
-import admin from '../../admin.jpg';
-import '../../styled/style.css';
+import { Row, Col, Image, Card } from "react-bootstrap";
+import { HeadingMain, HeadingSub } from "../../styled/main";
+import massage from "../../massage.jpg";
+import physios from "../../physios.jpg";
+import admin from "../../admin.jpg";
+import "../../styled/style.css";
 
 export const AboutPage = () => {
   return (
@@ -26,10 +26,10 @@ export const AboutPage = () => {
             dui vivamus arcu felis.{" "}
           </p>
         </Col>
-          <Image src={massage} alt="Massage Therapists" />
+        <Image src={massage} alt="Massage Therapists" />
       </Row>
       <Row>
-          <Image src={physios} alt="Physiotherapists" />
+        <Image src={physios} alt="Physiotherapists" />
         <Col>
           <HeadingSub id="physiotherapists" name="physiotherapists">
             Our Physiotherapists
@@ -46,7 +46,7 @@ export const AboutPage = () => {
         </Col>
       </Row>
       <Row>
-        <Col>  
+        <Col>
           <HeadingSub id="admin-staff" name="admin-staff">
             Our Administration Staff
           </HeadingSub>
@@ -85,9 +85,9 @@ export const AboutPage = () => {
       <Row>
         <Image src={physios} alt="Physiotherapy" />
         <Col>
-        <HeadingSub id="physiotherapy" name="physiotherapy">
-          Physiotherapy
-        </HeadingSub>
+          <HeadingSub id="physiotherapy" name="physiotherapy">
+            Physiotherapy
+          </HeadingSub>
           <p class="set-size">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
@@ -105,9 +105,9 @@ export const AboutPage = () => {
         </HeadingMain>
       </Row>
       <Row>
-          <HeadingMain id="massage" name="massage">
-            Massage
-          </HeadingMain>
+        <HeadingMain id="massage" name="massage">
+          Massage
+        </HeadingMain>
       </Row>
       <Row>
         <Col>
@@ -126,9 +126,9 @@ export const AboutPage = () => {
         </Col>
       </Row>
       <Row>
-          <HeadingMain id="physiotherapy" name="physiotherapy">
-            Physiotherapy
-          </HeadingMain>
+        <HeadingMain id="physiotherapy" name="physiotherapy">
+          Physiotherapy
+        </HeadingMain>
       </Row>
       <Row>
         <Col>
@@ -157,6 +157,24 @@ export const AboutPage = () => {
       <Row>
         <HeadingMain>Contact Us</HeadingMain>
       </Row>
+      <Row>
+        <Card className="contact-card">
+          <Row>
+            <Col>
+              <HeadingSub>CBD</HeadingSub>
+              <p>Address: CBD Location</p>
+              <p>Phone: 03 9555 2208</p>
+              <p>Email: cbdreception@flex-physio.com</p>
+            </Col>
+            <Col>
+              <HeadingSub>Suburbs</HeadingSub>
+              <p>Address: Suburbs Location</p>
+              <p>Phone: 03 9452 5556</p>
+              <p>Email: suburbsreception@flex-physio.com</p>
+            </Col>
+          </Row>
+        </Card>
+      </Row>
     </div>
   );
-}
+};
