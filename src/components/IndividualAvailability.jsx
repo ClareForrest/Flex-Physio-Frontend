@@ -22,9 +22,12 @@ export const IndividualAvailability = (props) => {
       <>
         <Row>
           <HeadingContainer>
-            <HeadingMain>Your Current Availabilities</HeadingMain>
+            <HeadingMain>Your Current Availability</HeadingMain>
           </HeadingContainer>
         </Row>
+        <Button variant="secondary" href="/availabilities">
+        View All Staff Availability
+      </Button>
         <Row>
           <Card className="login-card-size">
             <p>{employee.availability}</p>
@@ -33,7 +36,7 @@ export const IndividualAvailability = (props) => {
               type="button"
               href="/update-availability"
             >
-              Edit
+              Update
             </Button>
           </Card>
         </Row>
