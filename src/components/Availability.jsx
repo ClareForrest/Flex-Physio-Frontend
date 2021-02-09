@@ -19,7 +19,7 @@ export const Availability = () => {
       <HeadingContainer>
         <HeadingMain>All Staff Availabilities</HeadingMain>
       </HeadingContainer>
-      <Button variant="secondary" href="/availability/:id">
+      <Button variant="secondary" href={`/availability/${id}`}>
         View Your Own Availability
       </Button>
       {employee.map((body) => {
