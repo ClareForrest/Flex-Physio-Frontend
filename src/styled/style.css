@@ -5,6 +5,7 @@ a {
 
 #black-text-link {
   color: black; 
+  text-decoration: underline;
 }
 
 .dropdown-links {
@@ -19,8 +20,8 @@ a {
 }
 
 .login-card-size {
-  margin: 200px;
-  /* height: 210px; */
+  margin: 20px auto;
+  height: auto;
   width: 80%;
   padding: 20px;
   flex-direction: flex-wrap;
@@ -67,4 +68,10 @@ a {
 
 .silhouette-image {
   width: 100%;
+}
+
+.contact-card {
+  width: 100%;
+  margin: 20px auto;
+  padding: 15px;
 }

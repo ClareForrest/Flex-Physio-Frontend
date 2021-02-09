@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { HeadingContainer, HeadingMain } from '../styled/main';
-import { Card } from "react-bootstrap";
+import { HeadingContainer, HeadingMain } from "../styled/main";
+import { Card, Button } from "react-bootstrap";
 
 // This function renders the current availabilities of all employees through the index method in the API. It does this by mapping through them.
 export const Availability = () => {
@@ -17,16 +17,23 @@ export const Availability = () => {
   return (
     <div>
       <HeadingContainer>
-        <HeadingMain>Availabilities</HeadingMain>
+        <HeadingMain>All Staff Availabilities</HeadingMain>
       </HeadingContainer>
+      <Button variant="secondary" href="/availability/:id">
+        View Your Own Availability
+      </Button>
       {employee.map((body) => {
         return (
-          <Card className="availability-cards">
-            <p>{body.first_name} {body.last_name}</p>
-            <p>{body.availability}</p>
-          </Card>
-        )
+          <>
+            <Card className="availability-cards">
+              <p>
+                {body.first_name} {body.last_name}
+              </p>
+              <p>{body.availability}</p>
+            </Card>
+          </>
+        );
       })}
-    </div>  
-  )
-}
+    </div>
+  );
+};

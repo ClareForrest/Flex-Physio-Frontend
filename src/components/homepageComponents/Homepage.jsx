@@ -1,4 +1,4 @@
-import { Row, Col, Image } from "react-bootstrap";
+import { Row, Col, Image, Card } from "react-bootstrap";
 import { HeadingMain, HeadingSub } from "../../styled/main";
 import massage from "../../massage.jpg";
 import physios from "../../physios.jpg";
@@ -159,6 +159,24 @@ export const HomePage = () => {
       <Row>
         <HeadingMain>Contact Us</HeadingMain>
       </Row>
+      <Row>
+        <Card className="contact-card">
+          <Row>
+            <Col>
+              <HeadingSub>CBD</HeadingSub>
+              <p>Address: CBD Location</p>
+              <p>Phone: 03 9555 2208</p>
+              <p>Email: cbdreception@flex-physio.com</p>
+            </Col>
+            <Col>
+              <HeadingSub>Suburbs</HeadingSub>
+              <p>Address: Suburbs Location</p>
+              <p>Phone: 03 9452 5556</p>
+              <p>Email: suburbsreception@flex-physio.com</p>
+            </Col>
+          </Row>
+        </Card>
+      </Row>
     </div>
   );
-}
+};
