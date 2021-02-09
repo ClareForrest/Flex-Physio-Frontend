@@ -75,7 +75,7 @@ function Profile(props) {
           <Row>
             {!props.address && (
               <Row>
-                <Button variant="secondary" href={"/create-address"}>Create Address</Button>
+                <Button variant="secondary" href="/create-address">Create Address</Button>
               </Row>
             )}
           </Row>
