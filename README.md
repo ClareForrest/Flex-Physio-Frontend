@@ -70,6 +70,7 @@ A link to both mobile and desktop designs is [here](https://drive.google.com/dri
 
 ## R4. User Stories:
 Our site was built with the following user stories in mind.
+
 **Employees:**
 As an employee, I want to set my availabilities so I can work flexibly around my schedule
 As an employee, I want to update my availability as it changes so I can work flexibly around my schedule
@@ -88,7 +89,9 @@ As a business owner, I want my clients to be able to edit their personal details
 As a business owner, I want to offer the option of online payment so that my clients have choices and invoices are paid
 
 ## Planning and Project Management:
+
 **Trello:**
+
 Link to our [Trello Board](https://trello.com/b/6qhxWy0R/final-assessment)
 Clare and Chris utilised an AGILE project management strategy in the production of the site. We frequently employed the use of the Kanban tool Trello in pursuing this strategy.
 Trello has a number of features that we utilised, these being;
@@ -163,8 +166,8 @@ A link to these diagarams is [here](https://drive.google.com/drive/folders/1X_cN
 
 ## Third Party Services:
 We employed the use of the following third party services;
-**Bootstrap,	HTML5, CSS and JavaScript libraries** for consistent styling across the app.
-**Devise	Authentication** for the ability to restrict access to logged in users.
-**Stripe** A payment software platform implemented in the app to meet one of the business owner's user stories. It is a cashless and secure third party service for online transactions. 
-**Prettier** A linting tool for javascript code to help with code alignment and best practise in coding. 
-**SendGrid** A third party tool that enables the automatic generation of emails.
+- **Bootstrap, HTML5, CSS and JavaScript libraries** for consistent styling across the app.
+- **Devise	Authentication** for the ability to restrict access to logged in users.
+- **Stripe** A payment software platform implemented in the app to meet one of the business owner's user stories. It is a cashless and secure third party service for online transactions. 
+- **Prettier** A linting tool for javascript code to help with code alignment and best practise in coding. 
+- **SendGrid** A third party tool that enables the automatic generation of emails.
